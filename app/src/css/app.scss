@@ -18,5 +18,9 @@
 .login_btn{
   background-color: rgba($accent,.1);
   border: 2px solid rgba($accentBorder,.3);
-
+}
+.login_btn_tmp{
+  background-color: transparent;
+  font-size: large;
+  color: white;
 }
