@@ -1,0 +1,3 @@
+export enum ERole {
+  TEACHER='TEACHER',CHAIRMAN='CHAIRMAN',ADMIN='ADMIN',
+}

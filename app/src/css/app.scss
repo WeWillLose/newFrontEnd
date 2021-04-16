@@ -1,0 +1,22 @@
+// app global css in SCSS form
+.main_background{
+  background-color: $main;
+}
+.secondary_background{
+  background-color: $secondary;
+}
+.std_form_container{
+  min-width: 400px;
+  background-color: $info;
+  border-radius: 10px;
+}
+
+.main_btn {
+  background-color: rgba($info,.2);
+  border: 2px solid rgba($infoBorder,.3);
+}
+.login_btn{
+  background-color: rgba($accent,.1);
+  border: 2px solid rgba($accentBorder,.3);
+
+}
