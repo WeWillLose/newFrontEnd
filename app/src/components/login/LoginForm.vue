@@ -2,8 +2,8 @@
   <div class="std_form_container">
     <q-form class="q-gutter-md q-ma-md" @submit="onSubmit">
       <div><H4><strong>Авторизация</strong></H4></div>
-      <q-input type="text" label="Логин" v-model="user.username"/>
-      <q-input type="password" label="Пароль" v-model="user.password"/>
+      <q-input type="text" label="Логин" :rules="[ruleApi.required()]" v-model="user.username"/>
+      <q-input type="password" label="Пароль" v-model="user.password" :rules="[ruleApi.required()]"/>
       <div class="row justify-end ">
         <q-btn label="Войти" :loading="loading" type="submit" icon="login" unelevated flat
                class="login_btn_tmp"></q-btn>
@@ -16,6 +16,7 @@
   import {defineComponent, ref, reactive} from '@vue/composition-api';
   import {User, UserLogin, UserLoginInterface} from 'src/types/user/user';
   import notify from 'src/api/notifyApi';
+  import ruleApi from 'src/api/ruleApi';
 
   export default defineComponent({
     name: 'LoginPage',
@@ -23,8 +24,7 @@
     setup() {
       const loading = ref(false)
       const user = reactive(new UserLogin());
-
-      return {loading, user};
+      return {loading, user,ruleApi};
     },
     methods: {
       onSubmit(): void {
