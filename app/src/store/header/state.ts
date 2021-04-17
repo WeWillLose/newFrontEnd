@@ -6,23 +6,25 @@ export interface ItemInterface {
   link?: string
   icon?: string | null
   iconColor?: string | null,
-  role: ERole | null,
+  role?: ERole | null,
   separator?: boolean
+  onClick?: string
 }
 
 
-export interface HeaderInterface {
+export interface HeaderStateInterface {
   isLeftDrawerOpen: boolean
   miniLeftDrawer: boolean
-  menuList: ItemInterface[]
+  leftDrawerMenuList: ItemInterface[]
+  userMenuList: ItemInterface[]
 
 }
 
-function state(): HeaderInterface {
-  return <HeaderInterface>{
+function state(): HeaderStateInterface {
+  return <HeaderStateInterface>{
     isLeftDrawerOpen: true,
     miniLeftDrawer: <boolean>true,
-    menuList: <ItemInterface[]>[
+    leftDrawerMenuList: <ItemInterface[]>[
       {
         title: 'Администирование',
         caption: 'Только для админа',
@@ -63,7 +65,18 @@ function state(): HeaderInterface {
         link: 'followersReports',
         separator: true
       },
-    ]
+    ],
+    userMenuList: <ItemInterface[]>[
+      {
+        title: 'Выйти',
+        caption: '',
+        icon: 'logout',
+        iconColor: 'blue',
+        link: '',
+        onClick: 'logout',
+        separator: true
+      },
+  ],
   }
 }
 

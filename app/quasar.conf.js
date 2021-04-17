@@ -7,7 +7,7 @@
 // https://v1.quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { configure } = require('quasar/wrappers');
+const {configure} = require('quasar/wrappers');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -70,7 +70,7 @@ module.exports = configure(function (/* ctx */) {
 
       // https://v1.quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      chainWebpack (/* chain */) {
+      chainWebpack(/* chain */) {
         //
       },
     },
@@ -79,7 +79,16 @@ module.exports = configure(function (/* ctx */) {
     devServer: {
       https: false,
       port: 8080,
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
+      proxy: {
+        '/proxy': {
+          target: 'http://127.0.0.1:8085/',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/proxy': ''
+          }
+        },
+      }
     },
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -101,7 +110,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Notify']
     },
 
     // animations: 'all', // --- includes all animations
@@ -191,7 +200,7 @@ module.exports = configure(function (/* ctx */) {
       // More info: https://v1.quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (/* cfg */) {
+      extendWebpack(/* cfg */) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }

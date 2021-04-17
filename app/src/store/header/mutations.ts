@@ -1,15 +1,15 @@
 import { MutationTree } from 'vuex';
-import { HeaderInterface } from './state';
+import { HeaderStateInterface } from './state';
 
 
-const mutation: MutationTree<HeaderInterface> = {
+const mutation: MutationTree<HeaderStateInterface> = {
   someMutation (/* state: ExampleStateInterface */) {
     // your code
   },
-  setIsLeftDrawerOpen ( state: HeaderInterface, isOpen: boolean ) {
+  setIsLeftDrawerOpen (state: HeaderStateInterface, isOpen: boolean ) {
     state.isLeftDrawerOpen = isOpen;
   },
-  invertIsOpen ( state: HeaderInterface) {
+  invertIsOpen ( state: HeaderStateInterface) {
     state.isLeftDrawerOpen = !state.isLeftDrawerOpen;
   },
 };

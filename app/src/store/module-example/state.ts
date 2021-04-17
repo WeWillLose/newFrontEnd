@@ -6,6 +6,6 @@ function state(): ExampleStateInterface {
   return {
     isOpen: false
   }
-};
+}
 
 export default state;

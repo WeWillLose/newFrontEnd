@@ -2,32 +2,44 @@
   <div class="std_form_container">
     <q-form class="q-gutter-md q-ma-md" @submit="onSubmit">
       <div><H4><strong>Авторизация</strong></H4></div>
-      <q-input type="text" label="Логин"/>
-      <q-input type="password" label="Пароль"/>
+      <q-input type="text" label="Логин" v-model="user.username"/>
+      <q-input type="password" label="Пароль" v-model="user.password"/>
       <div class="row justify-end ">
-        <q-btn label="Войти" :loading="loading" type="submit" icon="login" unelevated flat class="login_btn_tmp"></q-btn>
+        <q-btn label="Войти" :loading="loading" type="submit" icon="login" unelevated flat
+               class="login_btn_tmp"></q-btn>
       </div>
     </q-form>
   </div>
 </template>
 
 <script lang="ts">
-  import {defineComponent, ref} from '@vue/composition-api';
+  import {defineComponent, ref, reactive} from '@vue/composition-api';
+  import {User, UserLogin, UserLoginInterface} from 'src/types/user/user';
+  import notify from 'src/api/notifyApi';
 
   export default defineComponent({
     name: 'LoginPage',
     components: {},
     setup() {
       const loading = ref(false)
-      return {loading};
+      const user = reactive(new UserLogin());
+
+      return {loading, user};
     },
     methods: {
-      onSubmit():void{
+      onSubmit(): void {
         this.loading = true;
         setTimeout(() => {
           this.loading = false;
-          this.$router.push("/")
-        },300)
+          this.$store.dispatch('user/login', this.user).then(isSuccess => {
+            if (isSuccess) {
+              notify.showPositiveNotify('Вы успешно залогинились')
+              this.$router.push('/')
+            }else{
+              notify.showErrorNotify('Авторизация провалена')
+            }
+          })
+        }, 300)
       }
     }
   });
