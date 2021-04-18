@@ -17,14 +17,14 @@
             content-class="user_menu"
           >
             <q-list style="min-width: 150px">
-              <q-item>
-                <q-item-section>
-                  <q-item-label >{{username}}</q-item-label>
-                  <q-item-label caption>
-                    {{ shortFio }}
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
+                <q-item>
+                  <q-item-section>
+                    <q-item-label>{{username}}</q-item-label>
+                    <q-item-label caption>
+                      {{ shortFio }}
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
               <q-item clickable @click="logout">
                 <q-item-section avatar>
                   <q-avatar>
@@ -94,9 +94,18 @@
         const userMenuItems: ItemInterface[] = HeaderHelper.useState(['userMenuList']).userMenuList as ItemInterface[];
         const isLogin = UserHelper.useGetters(['getIsLoggedIn']).getIsLoggedIn as boolean;
         const username = UserHelper.useGetters(['getUsername']).getUsername as string;
-        const shortFio= UserHelper.useGetters(['getShortFio']).getShortFio as string;
+        const shortFio = UserHelper.useGetters(['getShortFio']).getShortFio as string;
 
-        return {leftDrawerOpen, miniLeftDrawerState, leftDrawerMenuList, isAdmin, isLogin, username, userMenuItems,shortFio}
+        return {
+          leftDrawerOpen,
+          miniLeftDrawerState,
+          leftDrawerMenuList,
+          isAdmin,
+          isLogin,
+          username,
+          userMenuItems,
+          shortFio
+        }
       },
       methods: {
         invertLeftDrawerState(): void {

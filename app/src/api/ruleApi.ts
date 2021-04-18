@@ -10,6 +10,7 @@ export interface RuleApiInterface {
   alphaWithRus(): (val: string) => (boolean | string);
   withoutSpaces(): (val: string) => (boolean | string);
   required():(val: string) => (boolean | string);
+  requiredWithZero(): (val: string) => (boolean | string);
   lengthLess(len: number): (val: string) => (boolean | string);
   lengthGreater(len: number): (val: string) => (boolean | string);
   lengthEquals(len: number): (val: string) => (boolean | string);
@@ -30,7 +31,10 @@ export class RuleApi implements RuleApiInterface {
   };
 
   required(): (val: string) => (boolean | string) {
-    return (val: string) => !!val || 'Поле обязательное'
+    return (val: string) => (!!val) || 'Поле обязательное'
+  };
+  requiredWithZero(): (val: string) => (boolean | string) {
+    return (val: string) => (!!val || val == '0') || 'Поле обязательное'
   };
 
   lengthLess(len: number): (val: string) => (boolean | string) {

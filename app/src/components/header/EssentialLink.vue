@@ -1,7 +1,6 @@
 <template>
   <q-item
     clickable
-    @click="onClick"
     :to="link"
   >
     <q-item-section
@@ -35,10 +34,6 @@
         type: String,
         default: ''
       },
-      onClick: {
-        type: String,
-        default: 'pass'
-      },
       link: {
         type: String,
         default: '#',
@@ -57,8 +52,6 @@
       }
     },
     methods: {
-      pass() {
-      }
     }
   });
 </script>

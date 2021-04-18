@@ -2,7 +2,7 @@ import { store } from 'quasar/wrappers';
 import Vuex from 'vuex';
 import { ExampleStateInterface } from './module-example/state';
 import { HeaderStateInterface } from './header/state';
-
+import report from './report/'
 
 import createPersistedState from 'vuex-persistedstate'
 import example from './module-example';
@@ -32,11 +32,12 @@ export default store(function ({ Vue }) {
     modules: {
       example,
       header,
-      user
+      user,
+      report
     },
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: !!process.env.DEBUGGING,
+    // strict: !!process.env.DEBUGGING,
     plugins: [createPersistedState()]
   });
 

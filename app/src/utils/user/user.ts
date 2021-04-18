@@ -7,6 +7,7 @@ export interface UserUtilsInterface {
   isLoggedIn(user: UserInterface): boolean
   hasRole(user : UserInterface | null,erole:ERole):boolean
   getShortFio(user: UserInterface | null):string
+  getFio(user: UserInterface | null):string
 }
 export class UserUtils implements UserUtilsInterface {
   hasRole(user : UserInterface | null,erole:ERole):boolean {
@@ -39,7 +40,14 @@ export class UserUtils implements UserUtilsInterface {
     if(!user) return false;
     return true;
   }
-
+  getFio(user: UserInterface | null):string {
+    if(!user) return '';
+    let res:string = ''
+    res+=_.capitalize(user.lastName ||'')+' '
+    res+=_.capitalize(user.firstName ||'')
+    res+=_.capitalize(user.middleName ||'')
+    return res;
+  }
   getShortFio(user: UserInterface | null):string {
     if(!user) return '';
     let res:string = ''
