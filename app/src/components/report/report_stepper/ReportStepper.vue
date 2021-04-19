@@ -1,5 +1,6 @@
 <template>
   <q-stepper
+    class="bg-transparent"
     v-model="step"
     ref="stepper"
     color="primary"
@@ -32,10 +33,10 @@
       :done="step > 1"
     >
       Test tesdt
-
     </q-step>
 
     <template v-slot:navigation>
+      <q-separator spaced="md"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary"
                :label="step===0?'Начать':step===lastInd?'Закончить':'Продолжить'"/>

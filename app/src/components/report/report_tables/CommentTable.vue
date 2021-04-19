@@ -1,6 +1,7 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="1. Коментарии" :data="rows" :columns="columns" bordered separator="cell" hide-bottom >
+    <q-table title="1. Коментарии" :data="rows" :columns="columns" separator="vertical" hide-bottom
+             class="bg-transparent no-box-shadow">
       <template v-slot:body="props">
         <q-tr :props="props">
           <q-td key="comment" :props="props">

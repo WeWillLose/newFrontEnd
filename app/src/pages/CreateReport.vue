@@ -1,6 +1,6 @@
 <template>
     <q-page>
-      <div class="q-pa-md ">
+      <div class="q-pa-md">
         <report-stepper></report-stepper>
       </div>
     </q-page>

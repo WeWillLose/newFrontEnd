@@ -13,7 +13,8 @@ const routes: RouteConfig[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: 'createReport', component: () => import('pages/CreateReport.vue') }
+      { path: 'createReport', component: () => import('pages/CreateReport.vue') },
+      { path: 'toDo', component: () => import('pages/ToDo.vue') }
     ]
   },
 

@@ -10,12 +10,12 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
     for (const t in state) {
       try{
         if(t == 'meta'){
-          res['meta']['firstName'] = state[t].firstName
-          res['meta']['lastName'] = state[t].lastName
-          res['meta']['year1'] = state[t].year1
-          res['meta']['year2'] = state[t].year2
-          res['meta']['quarter'] = state[t].quarter
-          res['meta']['middleName'] = state[t].middleName
+          res['meta']['firstName'] = state[t]?.firstName
+          res['meta']['lastName'] = state[t]?.lastName
+          res['meta']['year1'] = state[t]?.year1
+          res['meta']['year2'] = state[t]?.year2
+          res['meta']['quarter'] = state[t]?.quarter
+          res['meta']['middleName'] = state[t]?.middleName
         }
         else dict[t] = state[t].rows as Record<string, unknown>[]
       }catch (e) {
