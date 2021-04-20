@@ -12,16 +12,17 @@
       :name="1"
       prefix="1"
       title="Инфорамция"
-      :error="tablesStepperState.meta.errors"
+      :error="tablesStepperState.meta.error"
       :done="tablesStepperState.meta.done"
     >
       <meta-title ref="meta"/>
     </q-step>
+
     <q-step
       :name="2"
       prefix="2"
       title="Камменарии"
-      :error="tablesStepperState.comment.errors"
+      :error="tablesStepperState.comment.error"
       :done="tablesStepperState.comment.done"
     >
       <comment-table ref="comment_table"/>
@@ -60,13 +61,17 @@
 
   const tablesStepperState = {
     meta: {
-      errors: false,
+      error: false,
       done:false
     },
     comment: {
-      errors: false,
+      error: false,
       done:false
-    }
+    },
+    progress_exam: {
+      error: false,
+      done:false
+    },
   }
   const lastInd = 3;
   export default defineComponent({

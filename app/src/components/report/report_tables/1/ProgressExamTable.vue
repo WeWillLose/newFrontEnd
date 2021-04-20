@@ -48,13 +48,13 @@
       <template v-slot:body="props">
         <q-tr :props="props">
           <q-td key="group" :props="props">
-            <q-input v-model="props.row.group" dense autofocus></q-input>
+            <q-input ref="groupField"></q-input>
           </q-td>
           <q-td key="subject" :props="props">
-            <q-input type="text" v-model="props.row.subject" dense autofocus></q-input>
+            <q-input v-model="props.row.subject"></q-input>
           </q-td>
           <q-td key="amount" :props="props">
-            <q-input type="number" v-model="props.row.amount" dense autofocus></q-input>
+            <q-input type="number" v-model="props.row.amount"></q-input>
           </q-td>
           <q-td key="mark5" :props="props">
             <q-input type="number" v-model="props.row.mark5"></q-input>
@@ -108,7 +108,7 @@
 
       const getEditedIndex = ProgressExamHelper.useGetters(['getEditedIndex']).getEditedIndex as unknown as number;
 
-      return {show_dialog, getColumns, getRows, getEditedItem,getEditedIndex}
+      return {show_dialog, getColumns, getRows, getEditedItem,getEditedIndex,ruleApi}
     },
     methods: {
       addRowHandler() {

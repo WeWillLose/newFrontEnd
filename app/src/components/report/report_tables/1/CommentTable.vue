@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="1. Коментарии" :data="rows" :columns="columns" separator="vertical" hide-bottom
+    <q-table title="1. Коментарии" :data="rows" :columns="columns" :separator="separator" hide-bottom
              class="bg-transparent no-box-shadow"
     >
       <template v-slot:body="props">
@@ -32,16 +32,17 @@
   export default defineComponent({
     name: 'CommentTable',
     setup() {
+
       const columns = CommentTableHelper.useGetters(['getColumns']).getColumns as unknown as Record<string, unknown>[];
       const rows = CommentTableHelper.useState(['rows']).rows as unknown as Record<string, unknown>[];
       const defaultItem = CommentTableHelper.useGetters(['getDefaultItem']).getDefaultItem as unknown as Record<string, unknown>;
       const editedIndex = CommentTableHelper.useGetters(['getEditedIndex']).getEditedIndex as unknown as number;
       const editedItem = CommentTableHelper.useGetters(['getEditedItem']).getEditedItem as unknown as Record<string, unknown>;
-
+      const separator = ref("vertical")
       const comment = ref(null)
       const score = ref(null)
 
-      return {columns, rows, defaultItem, editedIndex, editedItem, comment, score, ruleApi}
+      return {columns, rows, defaultItem, editedIndex, editedItem, comment, score, ruleApi,separator}
     },
 
     methods: {
