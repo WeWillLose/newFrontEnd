@@ -1,4 +1,4 @@
-import {ReportTableStateInterface} from 'src/store/report/report_tables/types';
+import {ReportTableStateInterface} from 'src/store/report/types';
 
 function state(): ReportTableStateInterface {
   return {

@@ -6,13 +6,16 @@ export interface NotifyInterface {
 }
 export class Notify implements NotifyInterface {
   showErrorNotify(message:string):void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     Vue.prototype.$q.notify({type:'negative',message:message})
 
   };
   showPositiveNotify(message:string):void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     Vue.prototype.$q.notify({type:'positive',message:message})
   };
   showForbiddenNotify():void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     Vue.prototype.$q.notify({type:'negative',message:'У вас нет прав или залогинтесь опять'})
   };
 }

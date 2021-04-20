@@ -3,6 +3,7 @@ import {ReportStateInterface} from './state';
 import {StateInterface} from '../index';
 
 const getters: GetterTree<ReportStateInterface, StateInterface> = {
+  getState: state => state,
   getData: state =>{
     const res:Record<string, unknown> = {}
     res['meta'] = {}

@@ -9,6 +9,7 @@ import example from './module-example';
 import header from './header';
 import user from './user';
 import {UserStateInterface} from 'src/store/user/state';
+import {ReportStateInterface} from 'src/store/report/state';
 
 /*
  * If not building with SSR mode, you can
@@ -22,6 +23,7 @@ export interface StateInterface {
   example: ExampleStateInterface
   header: HeaderStateInterface
   user: UserStateInterface
+  report: ReportStateInterface
 }
 
 export default store(function ({ Vue }) {

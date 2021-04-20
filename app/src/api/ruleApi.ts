@@ -1,5 +1,4 @@
-import Vue from 'vue'
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const numberRegexp = new RegExp('^[+-]?\\d+(\\.\\d+)?$');
 const withoutSpacesRegexp = new RegExp(/^\S+$/);
 const alphaWithRusExp = new RegExp(/^[a-zA-Zа-яА-Я]+$/);
@@ -47,14 +46,14 @@ export class RuleApi implements RuleApiInterface {
   lengthGreater(len: number): (val: string) => (boolean | string) {
     if (!len) {
       console.warn(`len in lengthGreater is ${len}`)
-    };
+    }
     return (val: string) => val.length > len || `Поле должно быть больше ${len} символов`
   };
 
   lengthEquals(len: number): (val: string) => (boolean | string) {
     if (!len) {
       console.warn(`len in lengthEquals is ${len}`)
-    };
+    }
     return (val: string) => val.length === len || `Поле должно состоять из ${len} символов`
   };
 

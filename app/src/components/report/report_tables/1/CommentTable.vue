@@ -1,11 +1,14 @@
 <template>
   <div class="q-gutter-sm">
     <q-table title="1. Коментарии" :data="rows" :columns="columns" separator="vertical" hide-bottom
-             class="bg-transparent no-box-shadow">
+             class="bg-transparent no-box-shadow"
+    >
       <template v-slot:body="props">
         <q-tr :props="props">
           <q-td key="comment" :props="props">
-            <q-input type="textarea" ref="comment" v-model="props.row.comment" dense maxlength="500" counter autofocus autogrow></q-input>
+            <q-input type="textarea" ref="comment" v-model="props.row.comment" dense maxlength="500" counter autofocus
+                     debounce="530"
+                     autogrow></q-input>
           </q-td>
           <q-td key="score" :props="props">
             <q-input type="number" ref="score" v-model="props.row.score" dense autofocus
@@ -26,19 +29,19 @@
 
   const CommentTableHelper = createNamespacedHelpers('report/comment')
 
-export  default defineComponent({
+  export default defineComponent({
     name: 'CommentTable',
-    setup(props,context) {
-      const columns = CommentTableHelper.useGetters(['getColumns']).getColumns as Record<string, unknown>[];
-      const rows = CommentTableHelper.useState(['rows']).rows as Record<string, unknown>[];
-      const defaultItem = CommentTableHelper.useGetters(['getDefaultItem']).getDefaultItem as Record<string, unknown>;
-      const editedIndex = CommentTableHelper.useGetters(['getEditedIndex']).getEditedIndex as number;
-      const editedItem = CommentTableHelper.useGetters(['getEditedItem']).getEditedItem as Record<string, unknown>;
+    setup() {
+      const columns = CommentTableHelper.useGetters(['getColumns']).getColumns as unknown as Record<string, unknown>[];
+      const rows = CommentTableHelper.useState(['rows']).rows as unknown as Record<string, unknown>[];
+      const defaultItem = CommentTableHelper.useGetters(['getDefaultItem']).getDefaultItem as unknown as Record<string, unknown>;
+      const editedIndex = CommentTableHelper.useGetters(['getEditedIndex']).getEditedIndex as unknown as number;
+      const editedItem = CommentTableHelper.useGetters(['getEditedItem']).getEditedItem as unknown as Record<string, unknown>;
 
       const comment = ref(null)
       const score = ref(null)
 
-      return {columns, rows, defaultItem, editedIndex, editedItem,comment,score,ruleApi}
+      return {columns, rows, defaultItem, editedIndex, editedItem, comment, score, ruleApi}
     },
 
     methods: {
@@ -48,7 +51,7 @@ export  default defineComponent({
         return this.comment?.hasError || this.score?.hasError
       }
     }
-})
+  })
 </script>
 <style>
 </style>

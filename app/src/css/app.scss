@@ -6,7 +6,7 @@
   background-color: $secondary;
 }
 .std_form_container{
-  min-width: 400px;
+  min-width: 25%;
   background-color: $info;
   border-radius: 10px;
 }
@@ -31,4 +31,7 @@
 .my-card{
   width: 100%;
   max-width: 350px;
+}
+.add_row_dialog{
+  min-width: 60%;
 }

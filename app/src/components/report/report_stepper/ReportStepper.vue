@@ -32,7 +32,7 @@
       title="Select campaign settings"
       :done="step > 1"
     >
-      Test tesdt
+      <progress-exam-table/>
     </q-step>
 
     <template v-slot:navigation>
@@ -48,9 +48,10 @@
 
 <script lang="ts">
 
-  import {reactive, ref, Ref,onMounted,onActivated,defineComponent} from '@vue/composition-api';
-  import CommentTable from 'components/report/report_tables/CommentTable.vue';
-  import MetaTitle from "components/report/meta/MetaTitle.vue";
+  import {reactive, ref, Ref,onMounted,onActivated,defineComponent} from '@vue/composition-api'
+  import CommentTable from 'components/report/report_tables/1/CommentTable.vue';
+  import MetaTitle from "components/report/meta/MetaTitle.vue"
+  import ProgressExamTable from "src/components/report/report_tables/1/ProgressExamTable.vue"
   import {createNamespacedHelpers} from 'vuex-composition-helpers';
 
   const CommentTableHelper = createNamespacedHelpers('report_tables/comment')
@@ -70,7 +71,7 @@
   const lastInd = 3;
   export default defineComponent({
     name: 'ReportStepper',
-    components: {CommentTable,MetaTitle},
+    components: {CommentTable,MetaTitle,ProgressExamTable},
     setup(props,context) {
       const step = ref(1)
       const stepper = ref(null)
