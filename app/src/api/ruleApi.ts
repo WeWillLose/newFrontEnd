@@ -60,6 +60,24 @@ export class RuleApi implements RuleApiInterface {
   passwordLength(): (val: string) => (boolean | string) {
     return (val: string) => val.length >= 6 || 'Пароль должен быть больше 6 символов'
   };
+  number(): (val: string) => (boolean | string){
+    return (val: string)=> numberRegexp.test(val) || 'Поле должно быть числом'
+  };
+  numberLess(max:number): (val: number) => (boolean | string) {
+    if(!max){
+    console.warn(`max in numberLess is ${max}`)
+  }
+  return (val:number) => val < max || `Поле должно быть меньше чем ${max}`
+};
+  numberBetweenNotStrictScore(min:number,max:number):(val: number) => (boolean | string) {
+    if(!min){
+    console.warn(`min in numberBetweenNotStrict is ${min}` )
+  }
+  if(!max){
+  console.warn(`max in numberBetweenNotStrict is ${max}`)
+}
+return (val:number)=>  (val >= min && val <= max || val == 0) ||  `Min ${min}, Max ${max}`
+};
 }
 
 const ruleApi = new RuleApi();

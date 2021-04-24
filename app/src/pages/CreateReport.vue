@@ -14,7 +14,7 @@
       // eslint-disable-next-line vue/no-unused-components
       components:{ReportStepper},
       setup(){
-        const isEditing =  ref(true)
+        const isEditing =  ref(false)
           return{isEditing}
       },
       methods: {
