@@ -39,10 +39,11 @@
     <q-step
       :name="3"
       prefix="3"
-      title="Select campaign settings"
-      :done="step > 1"
+      title="Успеваемость по предметам, не вынессеным на экзамены"
+      :error="tablesStepperState.progressexam.error"
+      :done="tablesStepperState.progressexam.done"
     >
-      <progress-exam-table/>
+      <progress-exam-table ref="progress_exam_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -52,9 +53,10 @@
       :name="4"
       prefix="4"
       title="Select campaign settings"
-      :done="step > 2"
+      :error="tablesStepperState.progress.error"
+      :done="tablesStepperState.progress.done"
     >
-      <progress-table/>
+      <progress-table ref="progress_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -64,9 +66,10 @@
       :name="5"
       prefix="5"
       title="Select campaign settings"
-      :done="step > 3"
+      :error="tablesStepperState.creation.error"
+      :done="tablesStepperState.creation.done"
     >
-      <creation-table/>
+      <creation-table ref="creation_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -76,9 +79,10 @@
       :name="6"
       prefix="6"
       title="Select campaign settings"
-      :done="step > 4"
+      :error="tablesStepperState.proective.error"
+      :done="tablesStepperState.proective.done"
     >
-      <proective-table/>
+      <proective-table ref="proective_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -88,9 +92,10 @@
       :name="7"
       prefix="7"
       title="Select campaign settings"
-      :done="step > 5"
+      :error="tablesStepperState.classrooms.error"
+      :done="tablesStepperState.classrooms.done"
     >
-      <class-rooms-table/>
+      <class-rooms-table ref="class_rooms_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -100,9 +105,10 @@
       :name="8"
       prefix="8"
       title="Select campaign settings"
-      :done="step > 6"
+      :error="tablesStepperState.complex.error"
+      :done="tablesStepperState.complex.done"
     >
-      <complex-table/>
+      <complex-table ref="complex_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -112,9 +118,10 @@
       :name="9"
       prefix="9"
       title="Select campaign settings"
-      :done="step > 7"
+      :error="tablesStepperState.education.error"
+      :done="tablesStepperState.education.done"
     >
-      <education-table/>
+      <education-table ref="education_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -124,9 +131,10 @@
       :name="10"
       prefix="10"
       title="Select campaign settings"
-      :done="step > 8"
+      :error="tablesStepperState.programs.error"
+      :done="tablesStepperState.programs.done"
     >
-      <programs-table/>
+      <programs-table ref="programs_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -136,9 +144,10 @@
       :name="11"
       prefix="11"
       title="Select campaign settings"
-      :done="step > 9"
+      :error="tablesStepperState.reconstruction.error"
+      :done="tablesStepperState.reconstruction.done"
     >
-      <reconstruction-table/>
+      <reconstruction-table ref="reconstruction_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -148,9 +157,10 @@
       :name="12"
       prefix="12"
       title="Select campaign settings"
-      :done="step > 10"
+      :error="tablesStepperState.sdo.error"
+      :done="tablesStepperState.sdo.done"
     >
-      <s-d-o-table/>
+      <s-d-o-table ref="sdo_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -160,9 +170,10 @@
       :name="13"
       prefix="13"
       title="Select campaign settings"
-      :done="step > 11"
+      :error="tablesStepperState.teachingaids.error"
+      :done="tablesStepperState.teachingaids.done"
     >
-      <teachingaids-table/>
+      <teachingaids-table ref="teachingaids_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -172,9 +183,10 @@
       :name="14"
       prefix="14"
       title="Select campaign settings"
-      :done="step > 12"
+      :error="tablesStepperState.workingprogram.error"
+      :done="tablesStepperState.workingprogram.done"
     >
-      <working-program-table/>
+      <working-program-table ref="working_program_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -184,9 +196,10 @@
       :name="15"
       prefix="15"
       title="Select campaign settings"
-      :done="step > 13"
+      :error="tablesStepperState.circle.error"
+      :done="tablesStepperState.circle.done"
     >
-      <circle-table/>
+      <circle-table ref="circle-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -196,9 +209,10 @@
       :name="16"
       prefix="16"
       title="Select campaign settings"
-      :done="step > 14"
+      :error="tablesStepperState.events.error"
+      :done="tablesStepperState.events.done"
     >
-      <events-table/>
+      <events-table ref="events-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -208,9 +222,10 @@
       :name="17"
       prefix="17"
       title="Select campaign settings"
-      :done="step > 15"
+      :error="tablesStepperState.institutions.error"
+      :done="tablesStepperState.institutions.done"
     >
-      <institutions-table/>
+      <institutions-table ref="institutions-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -220,9 +235,10 @@
       :name="18"
       prefix="18"
       title="Select campaign settings"
-      :done="step > 16"
+      :error="tablesStepperState.plan.error"
+      :done="tablesStepperState.plan.done"
     >
-      <plan-table/>
+      <plan-table ref="plan-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -232,9 +248,10 @@
       :name="19"
       prefix="19"
       title="Select campaign settings"
-      :done="step > 17"
+      :error="tablesStepperState.activity.error"
+      :done="tablesStepperState.activity.done"
     >
-      <activity-table/>
+      <activity-table ref="activity-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -244,9 +261,10 @@
       :name="20"
       prefix="20"
       title="Select campaign settings"
-      :done="step > 18"
+      :error="tablesStepperState.coolhours.error"
+      :done="tablesStepperState.coolhours.done"
     >
-      <coolhours-table/>
+      <coolhours-table ref="coolhours-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -256,9 +274,10 @@
       :name="21"
       prefix="21"
       title="Select campaign settings"
-      :done="step > 19"
+      :error="tablesStepperState.obz.error"
+      :done="tablesStepperState.obz.done"
     >
-      <o-b-z-table/>
+      <o-b-z-table ref="obz-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -268,9 +287,10 @@
       :name="22"
       prefix="22"
       title="Select campaign settings"
-      :done="step > 20"
+      :error="tablesStepperState.plangroup.error"
+      :done="tablesStepperState.plangroup.done"
     >
-      <plan-group-table/>
+      <plan-group-table ref="plan-group-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -280,9 +300,10 @@
       :name="23"
       prefix="23"
       title="Select campaign settings"
-      :done="step > 21"
+      :error="tablesStepperState.contest.error"
+      :done="tablesStepperState.contest.done"
     >
-      <contest-table/>
+      <contest-table ref="contest-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -292,9 +313,10 @@
       :name="24"
       prefix="24"
       title="Select campaign settings"
-      :done="step > 22"
+      :error="tablesStepperState.participation.error"
+      :done="tablesStepperState.participation.done"
     >
-      <participation-table/>
+      <participation-table ref="participation-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -304,9 +326,10 @@
       :name="25"
       prefix="25"
       title="Select campaign settings"
-      :done="step > 23"
+      :error="tablesStepperState.qualification.error"
+      :done="tablesStepperState.qualification.done"
     >
-      <qualification-table/>
+      <qualification-table ref="qualification-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -316,9 +339,10 @@
       :name="26"
       prefix="26"
       title="Select campaign settings"
-      :done="step > 24"
+      :error="tablesStepperState.selfeducation.error"
+      :done="tablesStepperState.selfeducation.done"
     >
-      <selfeducation-table/>
+      <selfeducation-table ref="selfeducation-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -328,9 +352,10 @@
       :name="27"
       prefix="27"
       title="Select campaign settings"
-      :done="step > 25"
+      :error="tablesStepperState.seminars.error"
+      :done="tablesStepperState.seminars.done"
     >
-      <seminars-table/>
+      <seminars-table ref="seminars-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -340,9 +365,10 @@
       :name="28"
       prefix="28"
       title="Select campaign settings"
-      :done="step > 26"
+      :error="tablesStepperState.technologies.error"
+      :done="tablesStepperState.technologies.done"
     >
-      <technologies-table/>
+      <technologies-table ref="technologies-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -352,9 +378,10 @@
       :name="29"
       prefix="29"
       title="Select campaign settings"
-      :done="step > 26"
+      :error="tablesStepperState.experience.error"
+      :done="tablesStepperState.experience.done"
     >
-      <experience-table/>
+      <experience-table ref="experience-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -364,9 +391,10 @@
       :name="30"
       prefix="30"
       title="Select campaign settings"
-      :done="step > 27"
+      :error="tablesStepperState.interaction.error"
+      :done="tablesStepperState.interaction.done"
     >
-      <interaction-table/>
+      <interaction-table ref="interaction-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -376,9 +404,10 @@
       :name="31"
       prefix="31"
       title="Select campaign settings"
-      :done="step > 28"
+      :error="tablesStepperState.subject.error"
+      :done="tablesStepperState.subject.done"
     >
-      <subject-table/>
+      <subject-table ref="subject-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -388,9 +417,10 @@
       :name="32"
       prefix="32"
       title="Select campaign settings"
-      :done="step > 31"
+      :error="tablesStepperState.manual.error"
+      :done="tablesStepperState.manual.done"
     >
-      <manual-table/>
+      <manual-table ref="manual-table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -400,7 +430,8 @@
       :name="33"
       prefix="33"
       title="Итог"
-      :done="step > 32"
+      :error="tablesStepperState.participation.error"
+      :done="tablesStepperState.participation.done"
     >
       <report-summary/>
       <q-stepper-navigation>
@@ -494,12 +525,13 @@
       const stepper = ref(null)
       const meta = ref(null)
       const comment_table = ref(null)
+      const complex-table = ref(null)
       const reportData = ReportTableHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const metaData = MetaHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const store=() => context.root.$store;
       const tablesStepperState:Record<string,Record<string,boolean>> = ReportTableHelper.useState(['tablesState']).tablesState as unknown as Record<string,Record<string,boolean>>
       console.log(tablesStepperState)
-      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store}
+      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store,}
     },
     methods: {
       loader(name:string):unknown{
@@ -514,10 +546,22 @@
         result['data']['computed'] = {}
         console.log(this.store())
         result['data']['computed']['sum1'] = this.store().getters['report/comment/getScore']
-          +this.store().getters['report/creation/getScore']+
-          this.store().getters['report/proective/getScore']
+          +this.store().getters['report/creation/getScore']+ this.store().getters['report/proective/getScore']
         this.store().commit('report/meta/setSum1', result['data']['computed']['sum1'])
-        result['data']['computed']['sum2'] = 0
+        result['data']['computed']['sum2'] = this.store().getters["report/class_rooms/getScore"] + this.store().getters["report/complex/getScore"] +
+          this.store().getters["report/education/getScore"] + this.store().getters["report/programs/getScore"] +
+          this.store().getters["report/reconstruction/getScore"] + this.store().getters["report/sdo/getScore"] +
+          this.store().getters["report/teaching_aids/getScore"] + this.store().getters["report/working_program/getScore"] +
+          this.store().getters["report/circle/getScore"] + this.store().getters["report/events/getScore"] +
+          this.store().getters["report/institutions/getScore"] + this.store().getters["report/plan/getScore"] +
+          this.store().getters["report/activity/getScore"] + this.store().getters["report/cool_hours/getScore"] +
+          this.store().getters["report/obz/getScore"] + this.store().getters["report/plan_group/getScore"] +
+          this.store().getters["report/contest/getScore"] + this.store().getters["report/participation/getScore"] +
+          this.store().getters["report/qualification/getScore"] + this.store().getters["report/self_education/getScore"] +
+          this.store().getters["report/seminars/getScore"] + this.store().getters["report/technologies/getScore"] +
+          this.store().getters["report/experience/getScore"] + this.store().getters["report/interaction/getScore"] +
+          this.store().getters["report/subject/getScore"] + this.store().getters["report/manual/getScore"]
+        this.store().commit('report/meta/setSum2', result['data']['computed']['sum2'])
         return result;
       },
       onFinish():void{
