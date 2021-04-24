@@ -1,16 +1,17 @@
 <template>
   <q-page class="q-pa-md">
-    <report-table></report-table>
+    <report-list/>
   </q-page>
 </template>
 
 <script lang="ts">
   import {defineComponent, ref} from '@vue/composition-api';
+  import ReportList from 'components/report/my_reports/ReportList.vue'
 
   export default defineComponent({
     name: 'MyReportsPage',
     components: {
-      ReportTable: () => import('src/components/report/my_reports/ReportTable.vue')
+      ReportList
     },
     setup() {
       return {}

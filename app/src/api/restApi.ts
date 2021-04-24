@@ -40,6 +40,10 @@ class Api implements ApiInterface {
   saveReport(data:unknown): Promise<ServerResponse<unknown>> {
     return resource.post('/report',data)
   };
+
+  getReportsCurrentUser(): Promise<ServerResponse<unknown>> {
+    return resource.get('/report/author/current')
+  }
 }
 
 const api = new Api();
