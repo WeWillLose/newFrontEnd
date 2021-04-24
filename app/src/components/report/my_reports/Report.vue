@@ -3,7 +3,7 @@
     <q-card-section>
       <div class="row items-center no-wrap">
         <div class="col">
-          <div class="text-h5 text-caption">{{reportName}}</div>
+          <div class="text-h6">{{reportName}}</div>
           <div class="text-subtitle2">Создан: {{createdBy}}</div>
           <div class="text-subtitle2">Статус:
             <q-badge :color="color">{{status}}</q-badge>
