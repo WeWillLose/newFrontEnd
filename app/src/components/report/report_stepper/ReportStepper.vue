@@ -40,8 +40,8 @@
       :name="3"
       prefix="3"
       title="Успеваемость по предметам, не вынессеным на экзамены"
-      :error="tablesStepperState.progressexam.error"
-      :done="tablesStepperState.progressexam.done"
+      :error="tablesStepperState.progress_exam.error"
+      :done="tablesStepperState.progress_exam.done"
     >
       <progress-exam-table ref="progress_exam_table"/>
       <q-stepper-navigation>
@@ -92,8 +92,8 @@
       :name="7"
       prefix="7"
       title="Select campaign settings"
-      :error="tablesStepperState.classrooms.error"
-      :done="tablesStepperState.classrooms.done"
+      :error="tablesStepperState.class_rooms.error"
+      :done="tablesStepperState.class_rooms.done"
     >
       <class-rooms-table ref="class_rooms_table"/>
       <q-stepper-navigation>
@@ -183,8 +183,8 @@
       :name="14"
       prefix="14"
       title="Select campaign settings"
-      :error="tablesStepperState.workingprogram.error"
-      :done="tablesStepperState.workingprogram.done"
+      :error="tablesStepperState.working_program.error"
+      :done="tablesStepperState.working_program.done"
     >
       <working-program-table ref="working_program_table"/>
       <q-stepper-navigation>
@@ -199,7 +199,7 @@
       :error="tablesStepperState.circle.error"
       :done="tablesStepperState.circle.done"
     >
-      <circle-table ref="circle-table"/>
+      <circle-table ref="circle_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -212,7 +212,7 @@
       :error="tablesStepperState.events.error"
       :done="tablesStepperState.events.done"
     >
-      <events-table ref="events-table"/>
+      <events-table ref="events_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -225,7 +225,7 @@
       :error="tablesStepperState.institutions.error"
       :done="tablesStepperState.institutions.done"
     >
-      <institutions-table ref="institutions-table"/>
+      <institutions-table ref="institutions_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -238,7 +238,7 @@
       :error="tablesStepperState.plan.error"
       :done="tablesStepperState.plan.done"
     >
-      <plan-table ref="plan-table"/>
+      <plan-table ref="plan_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -251,7 +251,7 @@
       :error="tablesStepperState.activity.error"
       :done="tablesStepperState.activity.done"
     >
-      <activity-table ref="activity-table"/>
+      <activity-table ref="activity_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -264,7 +264,7 @@
       :error="tablesStepperState.coolhours.error"
       :done="tablesStepperState.coolhours.done"
     >
-      <coolhours-table ref="coolhours-table"/>
+      <coolhours-table ref="coolhours_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -277,7 +277,7 @@
       :error="tablesStepperState.obz.error"
       :done="tablesStepperState.obz.done"
     >
-      <o-b-z-table ref="obz-table"/>
+      <o-b-z-table ref="obz_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -287,10 +287,10 @@
       :name="22"
       prefix="22"
       title="Select campaign settings"
-      :error="tablesStepperState.plangroup.error"
-      :done="tablesStepperState.plangroup.done"
+      :error="tablesStepperState.plan_group.error"
+      :done="tablesStepperState.plan_group.done"
     >
-      <plan-group-table ref="plan-group-table"/>
+      <plan-group-table ref="plan_group_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
