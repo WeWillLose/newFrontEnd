@@ -388,9 +388,21 @@
       :name="32"
       prefix="32"
       title="Select campaign settings"
-      :done="step > 29"
+      :done="step > 31"
     >
       <manual-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+    <q-step
+      :name="33"
+      prefix="33"
+      title="Итог"
+      :done="step > 32"
+    >
+      <report-summary/>
       <q-stepper-navigation>
         <q-btn @click="onFinish" color="primary" label="Закончить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -436,6 +448,7 @@
   import InteractionTable from 'components/report/report_tables/9/InteractionTable.vue';
   import SubjectTable from 'components/report/report_tables/10/SubjectTable.vue';
   import ManualTable from 'components/report/report_tables/11/ManualTable.vue';
+  import ReportSummary from 'components/report/report_tables/meta/ReportSummary.vue';
   import api from 'src/api/restApi';
 
 
@@ -606,7 +619,7 @@
       WorkingProgramTable,
       TeachingaidsTable,
       TechnologiesTable,
-      CommentTable,MetaTitle,ProgressExamTable,ProgressTable,CreationTable,ProectiveTable,ClassRoomsTable,EducationTable,ReconstructionTable,SDOTable,ProgramsTable,ComplexTable},
+      CommentTable,MetaTitle,ProgressExamTable,ProgressTable,CreationTable,ProectiveTable,ClassRoomsTable,EducationTable,ReconstructionTable,SDOTable,ProgramsTable,ComplexTable,ReportSummary},
     setup(props,context) {
       const step = ref(1)
       const stepper = ref(null)
@@ -633,7 +646,7 @@
         result['data']['computed']['sum1'] = this.store().getters['report/comment/getScore']
           +this.store().getters['report/creation/getScore']+
           this.store().getters['report/proective/getScore']
-
+        this.store().commit('report/meta/setSum1',result['data']['computed']['sum1'])
         result['data']['computed']['sum2'] = 0
         return result;
       },
@@ -663,9 +676,10 @@
         // }
         // tablesStepperState.comment.errors = false
         // tablesStepperState.comment.done = true
-
         this.stepper.next()
-
+        if(this.step==33){
+          this.prepareData()
+        }
       }
     },
   })

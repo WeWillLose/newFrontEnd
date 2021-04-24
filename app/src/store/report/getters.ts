@@ -1,7 +1,7 @@
 import {GetterTree} from 'vuex';
 import {ReportStateInterface} from './state';
 import {StateInterface} from '../index';
-import userUtils from "src/utils/user/user";
+import userUtils from 'src/utils/user/user';
 
 const getters: GetterTree<ReportStateInterface, StateInterface> = {
   getState: state => state,
@@ -9,10 +9,9 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
   getData: state => {
     const data: Record<string, unknown> = {}
 
-    const computed: Record<string, unknown> = {} as Record<string, unknown>
     const tables: Record<string, unknown> = {}
     const meta = {} as Record<string, unknown>
-
+    const res = {}
     let sum1 = 0;
     let sum2 = 0;
     for (const t in state) {
@@ -23,6 +22,7 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
           meta['year1'] = state[t]?.year1
           meta['year2'] = state[t]?.year2
           meta['quarter'] = state[t]?.quarter
+          res['reportName'] = state[t]?.reportName
           meta['middleName'] = state[t]?.middleName
           meta['fio'] = userUtils.getFio({
             firstName: state[t]?.firstName as string || '',
@@ -45,7 +45,7 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
     }
     data['tables'] = tables
     data['META'] = meta
-    const res = {}
+
     res['data'] = data
     return res
   },

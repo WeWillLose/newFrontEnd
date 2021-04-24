@@ -18,9 +18,14 @@ const getters: GetterTree<MetaStateInterface, StateInterface> = {
     dict['quarter'] =state.quarter;
     dict['fioShort'] = userUtils.getShortFio({'id':0,'roles': [], 'username': null,'lastName':state.lastName,'firstName':state.firstName,'middleName':state.middleName});
     dict['fio'] = userUtils.getFio({'id':0,'roles': [], 'username': null,'lastName':state.lastName,'firstName':state.firstName,'middleName':state.middleName});
+    dict['sum1'] = state.sum1
+    dict['sum2'] = state.sum2
+    dict['reportName'] = state.reportName
     return dict
   },
   getFirstName: state => state.firstName,
+  getSum1: state => state.sum1,
+  getSum2: state => state.sum2,
 };
 
 export default getters;

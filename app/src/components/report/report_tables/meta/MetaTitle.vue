@@ -3,21 +3,26 @@
     <q-form>
       <h5><strong>Иформация об учителе</strong></h5>
       <div class="row q-gutter-md">
-        <q-input class="col" label="Фамилия" ref="lastNameField"
+        <q-input class="col-12 col-md" label="Фамилия" ref="lastNameField"
                  v-model="lastName"></q-input>
-        <q-input class="col" label="Имя" ref="firstNameField"
+        <q-input class="col-12 col-md" label="Имя" ref="firstNameField"
                  v-model="firstName"></q-input>
-        <q-input class="col" label="Отчество" ref="middleNameField"
+        <q-input class="col-12 col-md" label="Отчество" ref="middleNameField"
                  v-model="middleName"></q-input>
       </div>
       <h5><strong>Информация об отчете</strong></h5>
       <div class="row q-gutter-md">
         <q-select :options="quarterOptions" class="col" ref="quarterField"
                   label="Квартал" hint="За какой квартал" v-model="quarter"></q-select>
-        <q-input class="col" type="number" label="Год" ref="year1Field"
+        <q-input class="col-12 col-md" type="number" label="Год" ref="year1Field"
                  hint="С какого года" v-model="year1"></q-input>
-        <q-input class="col" type="number" label="Год" ref="year2Field"
+        <q-input class="col-12 col-md" type="number" label="Год" ref="year2Field"
                  hint="По какой год" v-model="year2"></q-input>
+      </div>
+
+      <div class="row q-gutter-md">
+        <q-input class="col-12 col-md" type="text" label="Название отчета" ref="reportNameField"
+                 hint="С какого года" v-model="reportName"></q-input>
       </div>
     </q-form>
   </div>
@@ -58,6 +63,10 @@
         get: () => metaHelper.useState(['quarter']).quarter.value,
         set: (val) => context.root.$store.commit('report/meta/setQuarter', val)
       })
+      const reportName = computed({
+        get: () => metaHelper.useState(['reportName']).reportName.value,
+        set: (val) => context.root.$store.commit('report/meta/setReportName', val)
+      })
 
       let firstNameField = ref(null);
       let lastNameField = ref(null);
@@ -65,10 +74,11 @@
       let year1Field = ref(null);
       let year2Field = ref(null);
       let quarterField = ref(null);
+      let reportNameField = ref(null);
 
       return {
         firstName, lastName, middleName, quarter, year1, year2, quarterOptions,
-        firstNameField, lastNameField, middleNameField, quarterField, year1Field, year2Field,
+        firstNameField, lastNameField, middleNameField, quarterField, year1Field, year2Field,reportNameField,reportName
       }
     },
     methods: {

@@ -8,6 +8,9 @@ export interface MetaStateInterface {
   sum1: number,
   sum2: number,
   total: number,
+  procent1:number,
+  procent2:number,
+  reportName:string
 }
 const currYear = new Date().getFullYear();
 
@@ -20,7 +23,11 @@ export const defaultMetaState: MetaStateInterface = {
   year2: currYear+1,
   sum1:0,
   sum2:0,
-  total:0
+  total:0,
+  procent1:0,
+  procent2:0,
+  reportName:''
+
 }
 
 function state(): MetaStateInterface {
@@ -33,7 +40,10 @@ function state(): MetaStateInterface {
     year2: currYear+1,
     sum1:0,
     sum2:0,
-    total:0
+    total:0,
+    procent1:0,
+    procent2:0,
+    reportName:''
   }
 }
 
