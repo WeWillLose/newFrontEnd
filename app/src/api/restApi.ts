@@ -16,9 +16,11 @@ export const resource: AxiosInstance = axios.create({
 export interface ApiInterface {
   login(userLogin: UserLoginInterface): Promise<ServerResponse<User>>;
 
-  registrationUser(user: User): Promise<AxiosResponse<unknown>>;
+  registrationUser(user: User): Promise<ServerResponse<unknown>>;
 
-  getCurrentUser(): Promise<AxiosResponse<unknown>>;
+  getCurrentUser(): Promise<ServerResponse<unknown>>;
+
+  saveReport(data:unknown): Promise<ServerResponse<unknown>>;
 
 }
 
@@ -27,12 +29,16 @@ class Api implements ApiInterface {
     return resource.post('/auth/authenticate/', userLogin)
   };
 
-  registrationUser(user: User): Promise<AxiosResponse<unknown>> {
+  registrationUser(user: User): Promise<ServerResponse<unknown>> {
     return resource.post('/auth/registration', user)
   };
 
-  getCurrentUser(): Promise<AxiosResponse<User>> {
+  getCurrentUser(): Promise<ServerResponse<User>> {
     return resource.get('/auth/authenticate')
+  };
+
+  saveReport(data:unknown): Promise<ServerResponse<unknown>> {
+    return resource.post('/report',data)
   };
 }
 

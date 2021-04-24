@@ -23,7 +23,7 @@ export interface UserInterface {
   firstName: string | null,
   lastName: string | null,
   middleName: string | null,
-  roles: RoleInterface[]
+  roles?: RoleInterface[]
 }
 
 export class User implements UserInterface {

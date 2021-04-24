@@ -6,7 +6,9 @@
     color="primary"
     keep-alive
     active-color="purple"
+    vertical
     animated
+    header-nav
   >
     <q-step
       :name="1"
@@ -16,6 +18,9 @@
       :done="tablesStepperState.meta.done"
     >
       <meta-title ref="meta"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+      </q-stepper-navigation>
     </q-step>
 
     <q-step
@@ -26,6 +31,10 @@
       :done="tablesStepperState.comment.done"
     >
       <comment-table ref="comment_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="3"
@@ -34,6 +43,10 @@
       :done="step > 1"
     >
       <progress-exam-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="4"
@@ -42,6 +55,10 @@
       :done="step > 2"
     >
       <progress-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="5"
@@ -50,6 +67,10 @@
       :done="step > 3"
     >
       <creation-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="6"
@@ -58,6 +79,10 @@
       :done="step > 4"
     >
       <proective-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="7"
@@ -66,6 +91,10 @@
       :done="step > 5"
     >
       <class-rooms-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="8"
@@ -74,6 +103,10 @@
       :done="step > 6"
     >
       <complex-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="9"
@@ -82,22 +115,35 @@
       :done="step > 7"
     >
       <education-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
-      <q-step
-        :name="10"
-        prefix="10"
-        title="Select campaign settings"
-        :done="step > 8"
-      >
-        <programs-table/>
-      </q-step>
+    <q-step
+      :name="10"
+      prefix="10"
+      title="Select campaign settings"
+      :done="step > 8"
+    >
+      <programs-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
     <q-step
       :name="11"
       prefix="11"
       title="Select campaign settings"
       :done="step > 9"
     >
-      <reconstruction-table/></q-step>
+      <reconstruction-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
     <q-step
       :name="12"
       prefix="12"
@@ -105,6 +151,10 @@
       :done="step > 10"
     >
       <s-d-o-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="13"
@@ -113,6 +163,10 @@
       :done="step > 11"
     >
       <teachingaids-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="14"
@@ -121,6 +175,10 @@
       :done="step > 12"
     >
       <working-program-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="15"
@@ -129,6 +187,10 @@
       :done="step > 13"
     >
       <circle-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="16"
@@ -137,6 +199,10 @@
       :done="step > 14"
     >
       <events-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="17"
@@ -145,6 +211,10 @@
       :done="step > 15"
     >
       <institutions-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="18"
@@ -153,6 +223,10 @@
       :done="step > 16"
     >
       <plan-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="19"
@@ -161,6 +235,10 @@
       :done="step > 17"
     >
       <activity-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="20"
@@ -169,6 +247,10 @@
       :done="step > 18"
     >
       <coolhours-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="21"
@@ -177,6 +259,10 @@
       :done="step > 19"
     >
       <o-b-z-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="22"
@@ -185,6 +271,10 @@
       :done="step > 20"
     >
       <plan-group-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="23"
@@ -193,6 +283,10 @@
       :done="step > 21"
     >
       <contest-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="24"
@@ -201,6 +295,10 @@
       :done="step > 22"
     >
       <participation-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="25"
@@ -209,6 +307,10 @@
       :done="step > 23"
     >
       <qualification-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="26"
@@ -217,6 +319,10 @@
       :done="step > 24"
     >
       <selfeducation-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="27"
@@ -225,6 +331,10 @@
       :done="step > 25"
     >
       <seminars-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="28"
@@ -233,6 +343,10 @@
       :done="step > 26"
     >
       <technologies-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="29"
@@ -241,6 +355,10 @@
       :done="step > 26"
     >
       <experience-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="30"
@@ -249,6 +367,10 @@
       :done="step > 27"
     >
       <interaction-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="31"
@@ -257,6 +379,10 @@
       :done="step > 28"
     >
       <subject-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
     <q-step
       :name="32"
@@ -265,55 +391,53 @@
       :done="step > 29"
     >
       <manual-table/>
+      <q-stepper-navigation>
+        <q-btn @click="onFinish" color="primary" label="Закончить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
     </q-step>
 
-
-    <template v-slot:navigation>
-      <q-separator spaced="md"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary"
-               :label="step===0?'Начать':step===lastInd?'Закончить':'Продолжить'"/>
-        <q-btn v-if="step > 1" flat color="primary" @click="$refs.stepper.previous()" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </template>
   </q-stepper>
 </template>
 
 <script lang="ts">
 
   import {reactive, ref, Ref,onMounted,onActivated,defineComponent} from '@vue/composition-api'
-  import CommentTable from 'components/report/report_tables/1/CommentTable.vue';
-  import MetaTitle from "components/report/meta/MetaTitle.vue"
-  import ProgressExamTable from "src/components/report/report_tables/1/ProgressExamTable.vue"
-  import ProgressTable from "src/components/report/report_tables/1/ProgressTable.vue"
-  import CreationTable from "src/components/report/report_tables/2/CreationTable.vue"
-  import EducationTable from 'components/report/report_tables/3/EducationTable.vue';
-  import ProgramsTable from "components/report/report_tables/3/ProgramsTable.vue";
-  import ClassRoomsTable from 'components/report/report_tables/3/ClassRoomsTable.vue';
-  import ComplexTable from "components/report/report_tables/3/ComplexTable.vue";
-  import ReconstructionTable from "components/report/report_tables/3/ReconstructionTable.vue";
-  import SDOTable from 'components/report/report_tables/3/SDOTable.vue';
   import {createNamespacedHelpers} from 'vuex-composition-helpers';
-  import TechnologiesTable from "components/report/report_tables/7/TechnologiesTable.vue";
-  import TeachingaidsTable from "components/report/report_tables/3/TeachingaidsTable.vue";
-  import WorkingProgramTable from "components/report/report_tables/3/WorkingProgramTable.vue";
-  import CircleTable from "components/report/report_tables/4/CircleTable.vue";
-  import EventsTable from "components/report/report_tables/4/EventsTable.vue";
-  import InstitutionsTable from "components/report/report_tables/5/ActivityTable.vue";
-  import PlanTable from "components/report/report_tables/4/PlanTable.vue";
-  import ActivityTable from "components/report/report_tables/5/ActivityTable.vue";
-  import CoolhoursTable from "components/report/report_tables/5/CoolhoursTable.vue";
-  import OBZTable from "components/report/report_tables/5/OBZTable.vue";
-  import PlanGroupTable from "components/report/report_tables/5/PlanGroupTable.vue";
-  import ContestTable from "components/report/report_tables/6/ContestTable.vue";
-  import ParticipationTable from "components/report/report_tables/6/ParticipationTable.vue";
-  import QualificationTable from "components/report/report_tables/6/QualificationTable.vue";
-  import SelfeducationTable from "components/report/report_tables/6/SelfeducationTable.vue";
-  import SeminarsTable from "components/report/report_tables/6/SeminarsTable.vue";
-  import ExperienceTable from "components/report/report_tables/8/ExperienceTable.vue";
-  import InteractionTable from "components/report/report_tables/9/InteractionTable.vue";
-  import SubjectTable from "components/report/report_tables/10/SubjectTable.vue";
-  import ManualTable from "components/report/report_tables/11/ManualTable.vue";
+  import MetaTitle from 'components/report/report_tables/meta/MetaTitle.vue'
+  import CommentTable from 'components/report/report_tables/1/CommentTable.vue';
+  import ProgressExamTable from 'src/components/report/report_tables/1/ProgressExamTable.vue'
+  import ProgressTable from 'src/components/report/report_tables/1/ProgressTable.vue'
+  import CreationTable from 'src/components/report/report_tables/2/CreationTable.vue'
+  import ProectiveTable from 'src/components/report/report_tables/2/ProectiveTable.vue'
+  import EducationTable from 'components/report/report_tables/3/EducationTable.vue';
+  import ProgramsTable from 'components/report/report_tables/3/ProgramsTable.vue';
+  import ClassRoomsTable from 'components/report/report_tables/3/ClassRoomsTable.vue';
+  import ComplexTable from 'components/report/report_tables/3/ComplexTable.vue';
+  import ReconstructionTable from 'components/report/report_tables/3/ReconstructionTable.vue';
+  import SDOTable from 'components/report/report_tables/3/SDOTable.vue';
+  import TechnologiesTable from 'components/report/report_tables/7/TechnologiesTable.vue';
+  import TeachingaidsTable from 'components/report/report_tables/3/TeachingaidsTable.vue';
+  import WorkingProgramTable from 'components/report/report_tables/3/WorkingProgramTable.vue';
+  import CircleTable from 'components/report/report_tables/4/CircleTable.vue';
+  import EventsTable from 'components/report/report_tables/4/EventsTable.vue';
+  import InstitutionsTable from 'components/report/report_tables/5/ActivityTable.vue';
+  import PlanTable from 'components/report/report_tables/4/PlanTable.vue';
+  import ActivityTable from 'components/report/report_tables/5/ActivityTable.vue';
+  import CoolhoursTable from 'components/report/report_tables/5/CoolhoursTable.vue';
+  import OBZTable from 'components/report/report_tables/5/OBZTable.vue';
+  import PlanGroupTable from 'components/report/report_tables/5/PlanGroupTable.vue';
+  import ContestTable from 'components/report/report_tables/6/ContestTable.vue';
+  import ParticipationTable from 'components/report/report_tables/6/ParticipationTable.vue';
+  import QualificationTable from 'components/report/report_tables/6/QualificationTable.vue';
+  import SelfeducationTable from 'components/report/report_tables/6/SelfeducationTable.vue';
+  import SeminarsTable from 'components/report/report_tables/6/SeminarsTable.vue';
+  import ExperienceTable from 'components/report/report_tables/8/ExperienceTable.vue';
+  import InteractionTable from 'components/report/report_tables/9/InteractionTable.vue';
+  import SubjectTable from 'components/report/report_tables/10/SubjectTable.vue';
+  import ManualTable from 'components/report/report_tables/11/ManualTable.vue';
+  import api from 'src/api/restApi';
+
 
   const CommentTableHelper = createNamespacedHelpers('report_tables/comment')
   const ReportTableHelper = createNamespacedHelpers('report')
@@ -457,7 +581,6 @@
       error:false,
       done:false
     },
-
   }
   const lastInd = 32;
   export default defineComponent({
@@ -483,51 +606,64 @@
       WorkingProgramTable,
       TeachingaidsTable,
       TechnologiesTable,
-      CommentTable,MetaTitle,ProgressExamTable,ProgressTable,CreationTable,ClassRoomsTable,EducationTable,ReconstructionTable,SDOTable,ProgramsTable,ComplexTable},
+      CommentTable,MetaTitle,ProgressExamTable,ProgressTable,CreationTable,ProectiveTable,ClassRoomsTable,EducationTable,ReconstructionTable,SDOTable,ProgramsTable,ComplexTable},
     setup(props,context) {
       const step = ref(1)
       const stepper = ref(null)
       const meta = ref(null)
       const comment_table = ref(null)
-      const reportData = ReportTableHelper.useGetters(['getData']).getData as Record<string, unknown>;
-      const metaData = MetaHelper.useGetters(['getData']).getData as Record<string, unknown>;
-      const store = ()=>context.root.$store;
+      const reportData = ReportTableHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
+      const metaData = MetaHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
+      const store=() => context.root.$store;
+      console.log(context.root.$store.getters['report/comment/getScore'])
       return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store}
     },
     methods: {
-      prepareData():void{
-        const result = {} as Record<string,unknown>
-        result['tables'] = this.reportData.tables
-        result['meta'] = this.reportData.meta
-        this.store().commit('report/meta/setDefaultState')
-        this.store().commit('report/comment/setDefault')
-        console.log(result)
+      loader(name:string):unknown{
+        if(name) return ()=>import(`../report_tables/${name}`)
+        return null
+      },
+      onBack():void{
+        this.stepper.previous()
+      },
+      prepareData():unknown{
+        const result: Record<string, unknown> = this.reportData
+        result['data']['computed'] = {}
+        console.log(this.store())
+        result['data']['computed']['sum1'] = this.store().getters['report/comment/getScore']
+          +this.store().getters['report/creation/getScore']+
+          this.store().getters['report/proective/getScore']
+
+        result['data']['computed']['sum2'] = 0
+        return result;
+      },
+      onFinish():void{
+        const data = this.prepareData()
+        console.log(data)
+        api.saveReport(data).then(t=>console.log(t))
+        return;
       },
       onNext(): void {
-        if(this.meta?.hasError()){
-          console.log('Meta Has Error')
-          tablesStepperState.meta.errors = true
-          tablesStepperState.meta.done = false
-          this.stepper.goTo(1)
-          return;
-        }
-        tablesStepperState.meta.errors = false
-        tablesStepperState.meta.done = true
+        // if(this.meta?.hasError()){
+        //   console.log('Meta Has Error')
+        //   tablesStepperState.meta.errors = true
+        //   tablesStepperState.meta.done = false
+        //   this.stepper.goTo(1)
+        //   return;
+        // }
+        // tablesStepperState.meta.errors = false
+        // tablesStepperState.meta.done = true
+        //
+        // if(this.comment_table?.hasError()){
+        //   console.log('Has Error')
+        //   tablesStepperState.comment.errors = true
+        //   tablesStepperState.comment.done = false
+        //   this.stepper.goTo(2)
+        //   return;
+        // }
+        // tablesStepperState.comment.errors = false
+        // tablesStepperState.comment.done = true
 
-        if(this.comment_table?.hasError()){
-          console.log('Has Error')
-          tablesStepperState.comment.errors = true
-          tablesStepperState.comment.done = false
-          this.stepper.goTo(2)
-          return;
-        }
-        tablesStepperState.comment.errors = false
-        tablesStepperState.comment.done = true
-
-        if(this.step == lastInd){
-          this.prepareData()
-          return;
-        }
         this.stepper.next()
 
       }

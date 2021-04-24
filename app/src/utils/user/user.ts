@@ -42,15 +42,15 @@ export class UserUtils implements UserUtilsInterface {
   }
   getFio(user: UserInterface | null):string {
     if(!user) return '';
-    let res:string = ''
+    let res = ''
     res+=_.capitalize(user.lastName ||'')+' '
-    res+=_.capitalize(user.firstName ||'')
+    res+=_.capitalize(user.firstName ||'')+' '
     res+=_.capitalize(user.middleName ||'')
     return res;
   }
   getShortFio(user: UserInterface | null):string {
     if(!user) return '';
-    let res:string = ''
+    let res = ''
     res+=_.capitalize(user.lastName ||'')+' '
     res+=_.capitalize(user.firstName?.substr(0,1)?.concat('. ') ||'')
     res+=_.capitalize(user.middleName?.substr(0,1)?.concat('.') ||'')

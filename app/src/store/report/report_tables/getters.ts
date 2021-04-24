@@ -24,7 +24,7 @@ const getters: GetterTree<ReportTableStateInterface, StateInterface> = {
     dict[state.name] = state.rows
     return dict
   },
-  getScore: state =>{
+  getScore(state):number{
     let scoreRate = 0;
     try{
       if(!state.rows){

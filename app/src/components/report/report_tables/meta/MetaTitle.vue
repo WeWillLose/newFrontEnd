@@ -27,36 +27,36 @@
   import {computed, defineComponent, getCurrentInstance, ref} from "@vue/composition-api";
   import {createNamespacedHelpers} from "vuex-composition-helpers";
   import store from 'src/store';
+
   const metaHelper = createNamespacedHelpers('report/meta');
   export default defineComponent({
     name: 'MetaTitle',
-    setup(props,context) {
-      const vm = getCurrentInstance()
-      const store1 = store;
+    setup(props, context) {
       const quarterOptions = [1, 2, 3, 4]
+
       const firstName = computed({
         get: () => metaHelper.useState(['firstName']).firstName.value,
-        set: (val) => context.root.$store.commit('report/meta/setFirstName',val)
+        set: (val) => context.root.$store.commit('report/meta/setFirstName', val)
       })
       const lastName = computed({
         get: () => metaHelper.useState(['lastName']).lastName.value,
-        set: (val) => context.root.$store.commit('report/meta/setLastName',val)
+        set: (val) => context.root.$store.commit('report/meta/setLastName', val)
       })
       const middleName = computed({
         get: () => metaHelper.useState(['middleName']).middleName.value,
-        set: (val) => context.root.$store.commit('report/meta/setMiddleName',val)
+        set: (val) => context.root.$store.commit('report/meta/setMiddleName', val)
       })
       const year1 = computed({
         get: () => metaHelper.useState(['year1']).year1.value,
-        set: (val) => context.root.$store.commit('report/meta/setYear1',val)
+        set: (val) => context.root.$store.commit('report/meta/setYear1', val)
       })
       const year2 = computed({
         get: () => metaHelper.useState(['year2']).year2.value,
-        set: (val) => context.root.$store.commit('report/meta/setYear2',val)
+        set: (val) => context.root.$store.commit('report/meta/setYear2', val)
       })
       const quarter = computed({
         get: () => metaHelper.useState(['quarter']).quarter.value,
-        set: (val) => context.root.$store.commit('report/meta/setQuarter',val)
+        set: (val) => context.root.$store.commit('report/meta/setQuarter', val)
       })
 
       let firstNameField = ref(null);

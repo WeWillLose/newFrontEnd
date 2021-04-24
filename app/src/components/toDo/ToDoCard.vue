@@ -47,9 +47,9 @@
 </template>
 
 <script>
-  import {defineComponent,ref} from "@vue/composition-api";
+  import {defineComponent,ref} from '@vue/composition-api';
   export default defineComponent({
-    name: "ToDoCard",
+    name: 'ToDoCard',
     props:{
       id:{
         type: Number,
