@@ -551,13 +551,13 @@
         result['data']['computed']['sum2'] = this.store().getters["report/class_rooms/getScore"] + this.store().getters["report/complex/getScore"] +
           this.store().getters["report/education/getScore"] + this.store().getters["report/programs/getScore"] +
           this.store().getters["report/reconstruction/getScore"] + this.store().getters["report/sdo/getScore"] +
-          this.store().getters["report/teaching_aids/getScore"] + this.store().getters["report/working_program/getScore"] +
+          this.store().getters["report/teachingaids/getScore"] + this.store().getters["report/working_program/getScore"] +
           this.store().getters["report/circle/getScore"] + this.store().getters["report/events/getScore"] +
           this.store().getters["report/institutions/getScore"] + this.store().getters["report/plan/getScore"] +
-          this.store().getters["report/activity/getScore"] + this.store().getters["report/cool_hours/getScore"] +
+          this.store().getters["report/activity/getScore"] + this.store().getters["report/coolhours/getScore"] +
           this.store().getters["report/obz/getScore"] + this.store().getters["report/plan_group/getScore"] +
           this.store().getters["report/contest/getScore"] + this.store().getters["report/participation/getScore"] +
-          this.store().getters["report/qualification/getScore"] + this.store().getters["report/self_education/getScore"] +
+          this.store().getters["report/qualification/getScore"] + this.store().getters["report/selfeducation/getScore"] +
           this.store().getters["report/seminars/getScore"] + this.store().getters["report/technologies/getScore"] +
           this.store().getters["report/experience/getScore"] + this.store().getters["report/interaction/getScore"] +
           this.store().getters["report/subject/getScore"] + this.store().getters["report/manual/getScore"]
