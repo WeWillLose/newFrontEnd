@@ -16,9 +16,9 @@
                 <!--                <q-item clickable @click="editReport(report)">-->
                 <!--                  <q-item-section>Редактировать</q-item-section>-->
                 <!--                </q-item>-->
-                <!--                <q-item clickable @click="download(report)">-->
-                <!--                  <q-item-section>Скачать отчет</q-item-section>-->
-                <!--                </q-item>-->
+                <q-item clickable @click="downloadReport(id)">
+                  <q-item-section>Скачать отчет</q-item-section>
+                </q-item>
                 <!--                <q-item clickable @click="downloadScoreList(report)">-->
                 <!--                  <q-item-section>Скачать оценочный лист</q-item-section>-->
                 <!--                </q-item>-->
@@ -55,6 +55,7 @@
 <script>
   import {computed, defineComponent, ref} from "@vue/composition-api";
   import {EReportStatus} from "src/types/report/EReportStatus";
+  import ReportDownloadUtils from "src/utils/report/ReportDownloadUtils";
 
   export default defineComponent({
     name: 'Report',
@@ -84,12 +85,17 @@
       const getDate = computed(() => new Date(props.createdDate).toLocaleDateString())
       const expanded = ref(false)
       const color = computed(() => {
-        if (props.status  == EReportStatus.COMPLETED) return 'green'
+        if (props.status == EReportStatus.COMPLETED) return 'green'
         if (props.status == EReportStatus.CHECKED) return 'blue'
         return 'red'
       })
       return {getDate, expanded, color}
     },
+    methods: {
+      downloadReport(id) {
+        ReportDownloadUtils.downloadReportById(id)
+      }
+    }
 
   })
 </script>

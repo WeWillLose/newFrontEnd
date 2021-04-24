@@ -17,6 +17,7 @@
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "js-cookie": "^2.2.1",
+    "js-file-download": "^0.4.12",
     "lodash": "^4.17.21",
     "quasar": "^1.0.0",
     "vuex-composition-helpers": "^1.0.23",
