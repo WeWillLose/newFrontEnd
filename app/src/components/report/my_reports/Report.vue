@@ -19,9 +19,9 @@
                 <q-item clickable @click="downloadReport(id)">
                   <q-item-section>Скачать отчет</q-item-section>
                 </q-item>
-                <!--                <q-item clickable @click="downloadScoreList(report)">-->
-                <!--                  <q-item-section>Скачать оценочный лист</q-item-section>-->
-                <!--                </q-item>-->
+                <q-item clickable @click="downloadScoreList(id)">
+                  <q-item-section>Скачать оценочный лист</q-item-section>
+                </q-item>
               </q-list>
             </q-menu>
           </q-btn>
@@ -94,6 +94,9 @@
     methods: {
       downloadReport(id) {
         ReportDownloadUtils.downloadReportById(id)
+      },
+      downloadScoreList(id){
+        ReportDownloadUtils.downloadScoreListById(id)
       }
     }
 
