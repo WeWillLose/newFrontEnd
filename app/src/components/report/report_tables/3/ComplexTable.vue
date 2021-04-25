@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="Работа по созданию и совершенствованию учебно-методического комплекса по преподаваемым дисциплинам (в том числе в электронном виде)" :hide-no-data="true" :data="getRows"
+    <q-table title="3.3 Работа по созданию и совершенствованию учебно-методического комплекса по преподаваемым дисциплинам (в том числе в электронном виде)" :hide-no-data="true" :data="getRows"
              :separator="separator"
              :columns="getColumns"
              class="bg-transparent no-box-shadow">
@@ -18,7 +18,7 @@
                 <div class="row q-gutter-md q-ma-md">
                   <q-input  type="text" clearable v-model="getEditedItem.typework" label="Вид работ"></q-input>
                   <q-input  type="text" v-model="getEditedItem.MDK" label="УД, МДК"></q-input>
-                  <q-input  type="number" clearable v-model="getEditedItem.materials" label="Количество материалов"></q-input>
+                  <q-input  type="textarea" clearable v-model="getEditedItem.materials" label="Количество материалов"></q-input>
                 </div>
               </q-card-section>
 
@@ -40,7 +40,7 @@
             <q-input type="textarea" v-model="props.row.MDK" dense autofocus ></q-input>
           </q-td>
           <q-td key="materials" :props="props">
-            <q-input type="number" v-model="props.row.materials" dense autofocus ></q-input>
+            <q-input type="textarea" v-model="props.row.materials" dense autofocus ></q-input>
           </q-td>
           <q-td key="score" :props="props">
             <q-input type="number" v-model="props.row.score" dense autofocus

@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Работа над методической темой, проведение открытых уроков, внеурочных мероприятий, тематические выступления на заседаниях цикловых комиссий, педсоветах" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="6.1.4 Работа над методической темой, проведение открытых уроков, внеурочных мероприятий, тематические выступления на заседаниях цикловых комиссий, педсоветах" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>

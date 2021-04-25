@@ -22,10 +22,33 @@
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
       </q-stepper-navigation>
     </q-step>
-
     <q-step
       :name="2"
       prefix="2"
+      title="Успеваемость по предметам, вынесенным на экзамены."
+    >
+      <progress-exam-table ref="progress_exam_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+    <q-step
+      :name="3"
+      prefix="3"
+      title="Успеваемость по предметам, не вынесенным на экзамены."
+      :error="tablesStepperState.progress.error"
+      :done="tablesStepperState.progress.done"
+    >
+      <progress-table ref="progress_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+    <q-step
+      :name="4"
+      prefix="4"
       title="Камменарии"
       :error="tablesStepperState.comment.error"
       :done="tablesStepperState.comment.done"
@@ -37,35 +60,9 @@
       </q-stepper-navigation>
     </q-step>
     <q-step
-      :name="3"
-      prefix="3"
-      title="Успеваемость по предметам, не вынессеным на экзамены"
-      :error="tablesStepperState.progress_exam.error"
-      :done="tablesStepperState.progress_exam.done"
-    >
-      <progress-exam-table ref="progress_exam_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="4"
-      prefix="4"
-      title="Select campaign settings"
-      :error="tablesStepperState.progress.error"
-      :done="tablesStepperState.progress.done"
-    >
-      <progress-table ref="progress_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
       :name="5"
       prefix="5"
-      title="Select campaign settings"
+      title="Вовлечение студентов в творческую работу"
       :error="tablesStepperState.creation.error"
       :done="tablesStepperState.creation.done"
     >
@@ -78,7 +75,7 @@
     <q-step
       :name="6"
       prefix="6"
-      title="Select campaign settings"
+      title="Вовлечение студентов в проектную, исследовательскую работу "
       :error="tablesStepperState.proective.error"
       :done="tablesStepperState.proective.done"
     >
@@ -88,12 +85,24 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+      <q-step
+        :name="7"
+        prefix="7"
+        title="Разработка рабочей программы учебной дисциплины, модуля, междисциплинарного курса"
+        :error="tablesStepperState.working_program.error"
+        :done="tablesStepperState.working_program.done"
+      >
+        <working-program-table ref="working_program_table"/>
+        <q-stepper-navigation>
+          <q-btn @click="onNext" color="primary" label="Продолжить"/>
+          <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+        </q-stepper-navigation>
+      </q-step>
+
     <q-step
-      :name="7"
-      prefix="7"
-      title="Select campaign settings"
-      :error="tablesStepperState.class_rooms.error"
-      :done="tablesStepperState.class_rooms.done"
+      :name="8"
+      prefix="8"
+      title="Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий s"
     >
       <class-rooms-table ref="class_rooms_table"/>
       <q-stepper-navigation>
@@ -101,10 +110,38 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+      <q-step
+        :name="9"
+        prefix="9"
+        title="Пополнение учебно-методических и наглядных пособий"
+        :error="tablesStepperState.programs.error"
+        :done="tablesStepperState.programs.done"
+      >
+        <programs-table ref="programs_table"/>
+        <q-stepper-navigation>
+          <q-btn @click="onNext" color="primary" label="Продолжить"/>
+          <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+        </q-stepper-navigation>
+      </q-step>
+
+      <q-step
+        :name="10"
+        prefix="10"
+        title="Работа по развитию материальной базы кабинета (лаборатории), реконструкции кабинета (лаборатории)"
+        :error="tablesStepperState.reconstruction.error"
+        :done="tablesStepperState.reconstruction.done"
+      >
+        <reconstruction-table ref="reconstruction_table"/>
+        <q-stepper-navigation>
+          <q-btn @click="onNext" color="primary" label="Продолжить"/>
+          <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+        </q-stepper-navigation>
+      </q-step>
+
     <q-step
-      :name="8"
-      prefix="8"
-      title="Select campaign settings"
+      :name="11"
+      prefix="11"
+      title="Работа по созданию и совершенствованию учебно-методического комплекса по преподаваемым дисциплинам"
       :error="tablesStepperState.complex.error"
       :done="tablesStepperState.complex.done"
     >
@@ -114,10 +151,25 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
+      <q-step
+        :name="12"
+        prefix="12"
+        title="Разработка методических пособий, адресованных обучающимся"
+        :error="tablesStepperState.teachingaids.error"
+        :done="tablesStepperState.teachingaids.done"
+      >
+        <teachingaids-table ref="teachingaids_table"/>
+        <q-stepper-navigation>
+          <q-btn @click="onNext" color="primary" label="Продолжить"/>
+          <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+        </q-stepper-navigation>
+      </q-step>
+
     <q-step
-      :name="9"
-      prefix="9"
-      title="Select campaign settings"
+      :name="13"
+      prefix="13"
+      title="Создание методических работ по методике обучения, воспитания"
       :error="tablesStepperState.education.error"
       :done="tablesStepperState.education.done"
     >
@@ -127,36 +179,11 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
     <q-step
-      :name="10"
-      prefix="10"
-      title="Select campaign settings"
-      :error="tablesStepperState.programs.error"
-      :done="tablesStepperState.programs.done"
-    >
-      <programs-table ref="programs_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="11"
-      prefix="11"
-      title="Select campaign settings"
-      :error="tablesStepperState.reconstruction.error"
-      :done="tablesStepperState.reconstruction.done"
-    >
-      <reconstruction-table ref="reconstruction_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="12"
-      prefix="12"
-      title="Select campaign settings"
+      :name="14"
+      prefix="14"
+      title=" Работа по созданию и внедрению СДО"
       :error="tablesStepperState.sdo.error"
       :done="tablesStepperState.sdo.done"
     >
@@ -166,75 +193,11 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
-    <q-step
-      :name="13"
-      prefix="13"
-      title="Select campaign settings"
-      :error="tablesStepperState.teachingaids.error"
-      :done="tablesStepperState.teachingaids.done"
-    >
-      <teachingaids-table ref="teachingaids_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="14"
-      prefix="14"
-      title="Select campaign settings"
-      :error="tablesStepperState.working_program.error"
-      :done="tablesStepperState.working_program.done"
-    >
-      <working-program-table ref="working_program_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
+
     <q-step
       :name="15"
       prefix="15"
-      title="Select campaign settings"
-      :error="tablesStepperState.circle.error"
-      :done="tablesStepperState.circle.done"
-    >
-      <circle-table ref="circle_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="16"
-      prefix="16"
-      title="Select campaign settings"
-      :error="tablesStepperState.events.error"
-      :done="tablesStepperState.events.done"
-    >
-      <events-table ref="events_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="17"
-      prefix="17"
-      title="Select campaign settings"
-      :error="tablesStepperState.institutions.error"
-      :done="tablesStepperState.institutions.done"
-    >
-      <institutions-table ref="institutions_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="18"
-      prefix="18"
-      title="Select campaign settings"
+      title="Наличие плана, концепции воспитательной работы"
       :error="tablesStepperState.plan.error"
       :done="tablesStepperState.plan.done"
     >
@@ -244,49 +207,53 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
+    <q-step
+      :name="16"
+      prefix="16"
+      title="Наличие предметного кружка, эффективность его работы"
+      :error="tablesStepperState.circle.error"
+      :done="tablesStepperState.circle.done"
+    >
+      <circle-table ref="circle_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="17"
+      prefix="17"
+      title="Использование возможностей культурных, научных, производственных и др. учреждений района, города и т.д. в организации внеурочной работы"
+      :error="tablesStepperState.institutions.error"
+      :done="tablesStepperState.institutions.done"
+    >
+      <institutions-table ref="institutions_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="18"
+      prefix="18"
+      title="Проведение мероприятий (отделение, колледж)"
+      :error="tablesStepperState.events.error"
+      :done="tablesStepperState.events.done"
+    >
+      <events-table ref="events_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
     <q-step
       :name="19"
       prefix="19"
-      title="Select campaign settings"
-      :error="tablesStepperState.activity.error"
-      :done="tablesStepperState.activity.done"
-    >
-      <activity-table ref="activity_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="20"
-      prefix="20"
-      title="Select campaign settings"
-      :error="tablesStepperState.coolhours.error"
-      :done="tablesStepperState.coolhours.done"
-    >
-      <coolhours-table ref="coolhours_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="21"
-      prefix="21"
-      title="Select campaign settings"
-      :error="tablesStepperState.obz.error"
-      :done="tablesStepperState.obz.done"
-    >
-      <o-b-z-table ref="obz_table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="22"
-      prefix="22"
-      title="Select campaign settings"
+      title="Наличие плана воспитательной работы с группой"
       :error="tablesStepperState.plan_group.error"
       :done="tablesStepperState.plan_group.done"
     >
@@ -296,49 +263,53 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
+    <q-step
+      :name="20"
+      prefix="20"
+      title="Проведение тематических классных часов"
+      :error="tablesStepperState.coolhours.error"
+      :done="tablesStepperState.coolhours.done"
+    >
+      <coolhours-table ref="coolhours_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="21"
+      prefix="21"
+      title="Организация и проведение мероприятий (отделение, колледж)"
+      :error="tablesStepperState.activity.error"
+      :done="tablesStepperState.activity.done"
+    >
+      <activity-table ref="activity_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="22"
+      prefix="22"
+      title="Сопровождение обучающихся с ОВЗ"
+      :error="tablesStepperState.obz.error"
+      :done="tablesStepperState.obz.done"
+    >
+      <o-b-z-table ref="obz_table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
     <q-step
       :name="23"
       prefix="23"
-      title="Select campaign settings"
-      :error="tablesStepperState.contest.error"
-      :done="tablesStepperState.contest.done"
-    >
-      <contest-table ref="contest-table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="24"
-      prefix="24"
-      title="Select campaign settings"
-      :error="tablesStepperState.participation.error"
-      :done="tablesStepperState.participation.done"
-    >
-      <participation-table ref="participation-table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="25"
-      prefix="25"
-      title="Select campaign settings"
-      :error="tablesStepperState.qualification.error"
-      :done="tablesStepperState.qualification.done"
-    >
-      <qualification-table ref="qualification-table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
-    </q-step>
-    <q-step
-      :name="26"
-      prefix="26"
-      title="Select campaign settings"
+      title="Непрерывность повышения квалификацииs"
       :error="tablesStepperState.selfeducation.error"
       :done="tablesStepperState.selfeducation.done"
     >
@@ -348,10 +319,25 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
     <q-step
-      :name="27"
-      prefix="27"
-      title="Select campaign settings"
+      :name="24"
+      prefix="24"
+      title="Прохождение курсов повышения квалификации, стажировки"
+      :error="tablesStepperState.qualification.error"
+      :done="tablesStepperState.qualification.done"
+    >
+      <qualification-table ref="qualification-table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="25"
+      prefix="25"
+      title="Участие в работе конференций, семинаров, заседаний городского МО (посещение), обучение на краткосрочных курсах"
       :error="tablesStepperState.seminars.error"
       :done="tablesStepperState.seminars.done"
     >
@@ -361,10 +347,37 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
+    <q-step
+      :name="26"
+      prefix="26"
+      title="Работа  над методической темой, проведение открытых уроков, внеурочных мероприятий, тематические выступления на заседаниях цикловых комиссий, педсоветах"
+      :error="tablesStepperState.participation.error"
+      :done="tablesStepperState.participation.done"
+    >
+      <participation-table ref="participation-table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
+    <q-step
+      :name="27"
+      prefix="27"
+      title="Участие преподавателя в профессиональных конкурсах, конференциях, проектах"
+    >
+      <contest-table ref="contest-table"/>
+      <q-stepper-navigation>
+        <q-btn @click="onNext" color="primary" label="Продолжить"/>
+        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+      </q-stepper-navigation>
+    </q-step>
+
     <q-step
       :name="28"
       prefix="28"
-      title="Select campaign settings"
+      title="Использование современных образовательных технологий в учебной деятельности и воспитательной работе"
       :error="tablesStepperState.technologies.error"
       :done="tablesStepperState.technologies.done"
     >
@@ -374,10 +387,11 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
     <q-step
       :name="29"
       prefix="29"
-      title="Select campaign settings"
+      title="Обобщение и распространение опыта"
       :error="tablesStepperState.experience.error"
       :done="tablesStepperState.experience.done"
     >
@@ -387,10 +401,11 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
     <q-step
       :name="30"
       prefix="30"
-      title="Select campaign settings"
+      title="Взаимодействие с представителями социума"
       :error="tablesStepperState.interaction.error"
       :done="tablesStepperState.interaction.done"
     >
@@ -400,23 +415,25 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
     <q-step
-      :name="31"
-      prefix="31"
-      title="Select campaign settings"
-      :error="tablesStepperState.subject.error"
-      :done="tablesStepperState.subject.done"
+    :name="31"
+    prefix="31"
+    title="Исполнительская дисциплина"
+    :error="tablesStepperState.subject.error"
+    :done="tablesStepperState.subject.done"
     >
-      <subject-table ref="subject-table"/>
-      <q-stepper-navigation>
-        <q-btn @click="onNext" color="primary" label="Продолжить"/>
-        <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
-      </q-stepper-navigation>
+    <subject-table ref="subject-table"/>
+    <q-stepper-navigation>
+      <q-btn @click="onNext" color="primary" label="Продолжить"/>
+      <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
+    </q-stepper-navigation>
     </q-step>
+
     <q-step
       :name="32"
       prefix="32"
-      title="Select campaign settings"
+      title="Руководство региональным МО"
       :error="tablesStepperState.manual.error"
       :done="tablesStepperState.manual.done"
     >
@@ -426,12 +443,11 @@
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
       </q-stepper-navigation>
     </q-step>
+
     <q-step
       :name="33"
       prefix="33"
       title="Итог"
-      :error="tablesStepperState.participation.error"
-      :done="tablesStepperState.participation.done"
     >
       <report-summary/>
       <q-stepper-navigation>
@@ -525,13 +541,13 @@
       const stepper = ref(null)
       const meta = ref(null)
       const comment_table = ref(null)
-      const complex-table = ref(null)
+      const complex_table = ref(null)
       const reportData = ReportTableHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const metaData = MetaHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const store=() => context.root.$store;
       const tablesStepperState:Record<string,Record<string,boolean>> = ReportTableHelper.useState(['tablesState']).tablesState as unknown as Record<string,Record<string,boolean>>
       console.log(tablesStepperState)
-      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store,}
+      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store,complex_table}
     },
     methods: {
       loader(name:string):unknown{
@@ -546,7 +562,7 @@
         result['data']['computed'] = {}
         console.log(this.store())
         result['data']['computed']['sum1'] = this.store().getters['report/comment/getScore']
-          +this.store().getters['report/creation/getScore']+ this.store().getters['report/proective/getScore']
+          + this.store().getters['report/creation/getScore']+ this.store().getters['report/proective/getScore']
         this.store().commit('report/meta/setSum1', result['data']['computed']['sum1'])
         result['data']['computed']['sum2'] = this.store().getters["report/class_rooms/getScore"] + this.store().getters["report/complex/getScore"] +
           this.store().getters["report/education/getScore"] + this.store().getters["report/programs/getScore"] +

@@ -1,14 +1,14 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Обобщение и распространение опыта" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="8 Обобщение и распространение опыта" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>
-          <q-btn dense color="secondary" label="Добавить строку" @click="show_dialog = true" no-caps ></q-btn>
+          <q-btn dense color="primary" label="Добавить строку" @click="show_dialog = true" no-caps ></q-btn>
         </div>
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
-            <q-card class="add-row-dialog">
+            <q-card class="add_row_dialog bg-secondary">
               <q-card-section>
                 <div class="text-h6">Добавить строку</div>
               </q-card-section>

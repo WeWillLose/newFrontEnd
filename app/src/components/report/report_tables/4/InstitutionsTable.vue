@@ -1,10 +1,10 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Наличие плана, концепции воспитательной работы" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="4.3 Использование возможностей культурных, научных, производственных и др. учреждений района, города и т.д. в организации внеурочной работы" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>
-          <q-btn dense color="secondary" label="Добавить строку" @click="show_dialog = true" no-caps ></q-btn>
+          <q-btn dense color="primary" label="Добавить строку" @click="show_dialog = true" no-caps ></q-btn>
         </div>
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
@@ -52,14 +52,14 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" >
 import {createNamespacedHelpers} from 'vuex-composition-helpers';
 import {computed, defineComponent, ref, watch} from "@vue/composition-api";
 import ruleApi from 'src/api/ruleApi';
 
 const InstitutionsHelper = createNamespacedHelpers('report/institutions')
 
-export default defineComponent({
+ export default defineComponent({
   name: 'InstitutionsTable',
   setup(props,context) {
     const getColumns = InstitutionsHelper.useGetters(['getColumns']).getColumns as unknown as Record < string, unknown>[];

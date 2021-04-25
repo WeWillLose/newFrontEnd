@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Наличие плана, концепции воспитательной работы" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="4.1 Наличие плана, концепции воспитательной работы" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>

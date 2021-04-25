@@ -1,10 +1,11 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Участие в работе конференций, семинаров, заседаний городского МО (посещение), обучение на краткосрочных курсах" :hide-no-data="true" :data="getRows"
+    <q-table title="6.1.3 Участие в работе конференций, семинаров, заседаний городского МО (посещение), обучение на краткосрочных курсах" :hide-no-data="true" :data="getRows"
              :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>
+          <q-btn dense color="primary" label="Добавить строку" @click="show_dialog = true" no-caps ></q-btn>
         </div>
         <div class="q-pa-sm q-gutter-sm">
           <q-dialog v-model="show_dialog">
@@ -15,6 +16,7 @@
 
               <q-card-section class="">
                 <div class="row q-gutter-md q-ma-md">
+                  <q-input  type="text" clearable v-model="getEditedItem.name" label="Название мероприятия"></q-input>
                 </div>
 
 
@@ -35,7 +37,8 @@
             <q-input type="text" v-model="props.row.name" dense autofocus></q-input>
           </q-td>
           <q-td key="score" :props="props">
-            <q-input type="number" v-model="props.row.score" dense autofocus></q-input>
+            <q-input type="number" v-model="props.row.score" dense autofocus
+                     :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0.5,1)]"></q-input>
           </q-td>
 
           <q-td key="actions" :props="props" auto-width>

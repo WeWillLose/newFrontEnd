@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Деятельность преподавателя в качестве классного руководителя" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="5.1 Наличие плана воспитательной работы с группой" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>

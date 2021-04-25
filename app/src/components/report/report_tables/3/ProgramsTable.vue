@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Пополнение учебно-методических и наглядных пособий" :hide-no-data="true" :data="getRows" :columns="getColumns" :separator="separator"
+    <q-table title="3.2.2 Пополнение учебно-методических и наглядных пособий" :hide-no-data="true" :data="getRows" :columns="getColumns" :separator="separator"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>

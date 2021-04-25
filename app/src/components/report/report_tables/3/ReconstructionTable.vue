@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Работа по развитию материальной базы кабинета (лаборатории), реконструкции кабинета (лаборатории)" :hide-no-data="true" :data="getRows"
+    <q-table title="3.2.3 Работа по развитию материальной базы кабинета (лаборатории), реконструкции кабинета (лаборатории)" :hide-no-data="true" :data="getRows"
              :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>

@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Использование современных образовательных технологий в учебной деятельности и воспитательной работе" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="7 Использование современных образовательных технологий в учебной деятельности и воспитательной работе" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>

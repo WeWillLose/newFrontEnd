@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm q-gutter-sm">
-    <q-table title="Непрерывность повышения квалификации" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="6.1.1 Непрерывность повышения квалификации" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>

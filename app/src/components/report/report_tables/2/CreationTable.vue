@@ -1,7 +1,7 @@
 <template>
 
   <div class="q-gutter-sm">
-    <q-table title="2.1Познавательная активность обучающихся" :hide-no-data="true" :data="getRows" :columns="getColumns"
+    <q-table title="2.1 Познавательная активность обучающихся" :hide-no-data="true" :data="getRows" :columns="getColumns"
              class="bg-transparent no-box-shadow" >
       <template v-slot:top-right>
         <div>

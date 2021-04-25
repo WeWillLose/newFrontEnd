@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий" :hide-no-data="true" :data="getRows" :separator="separator"
+    <q-table title="3.2.1 Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий" :hide-no-data="true" :data="getRows" :separator="separator"
              :columns="getColumns"
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>

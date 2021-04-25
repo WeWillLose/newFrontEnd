@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="Познавательная активность обучающихся" :data="getRows" :columns="getColumns" :separator="separator" hide-bottom
+    <q-table title="2.2 Познавательная активность обучающихся" :data="getRows" :columns="getColumns" :separator="separator" hide-bottom
              class="bg-transparent no-box-shadow">
       <template v-slot:top-right>
         <div>
@@ -14,7 +14,7 @@
 
               <q-card-section >
                 <div class="row q-gutter-md q-ma-md">
-                  <q-input  type="text" clearable v-model="getEditedItem.interesting" label="2.2 Вовлечение студентов в проектную, исследовательскую работу"></q-input>
+                  <q-input  type="text" clearable v-model="getEditedItem.interesting" label="Вовлечение студентов в проектную, исследовательскую работу"></q-input>
                   <q-input  type="text" v-model="getEditedItem.proof" label="Обоснования"></q-input>
                 </div>
               </q-card-section>

@@ -1,6 +1,6 @@
 <template>
   <div class="q-gutter-sm">
-    <q-table title="2.1 Успеваемость по предметам, не вынессеным на экзамены" :hide-no-data="true" :data="getRows"
+    <q-table title="1.2 Успеваемость по предметам, не вынессеным на экзамены" :hide-no-data="true" :data="getRows"
       :columns="getColumns"
       class="bg-transparent no-box-shadow"
     >
@@ -45,7 +45,7 @@
       <template v-slot:body="props">
         <q-tr :props="props">
           <q-td key="group" :props="props">
-            <q-input ref="groupField"></q-input>
+            <q-input type="text" v-model="props.row.group"></q-input>
           </q-td>
           <q-td key="subject" :props="props">
             <q-input type="text" v-model="props.row.subject"  ></q-input>
