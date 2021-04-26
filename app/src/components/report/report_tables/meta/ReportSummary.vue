@@ -30,9 +30,10 @@
 
       const procent1Field = ref(null)
       const procent1 = computed(()=>{
-        if(sum1.value<=5) return 5;
-        if(sum1.value<=10) return 10;
-        return 15
+        if(sum1.value>=4 && sum1.value<=5) return 5;
+        if(sum1.value>=6 && sum1.value<=10) return 10;
+        if(sum1.value>=11 && sum1.value<=15) return 15;
+        return 0
       });
 
       const procent2Field = ref(null)

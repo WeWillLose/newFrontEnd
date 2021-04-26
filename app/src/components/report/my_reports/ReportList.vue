@@ -15,6 +15,7 @@
   import Report from './Report.vue'
   import {defineComponent,ref} from '@vue/composition-api'
   import api from "../../../api/restApi";
+  import notify from "src/api/notifyApi";
 
   export default defineComponent({
     name: 'ReportList',
@@ -35,6 +36,8 @@
           let data = response.data
           this.reports = data
         }catch (e) {
+          if(e.response.status == 403) notify.showErrorNotify('У вас нет доступа или залогинтесь опять')
+          else notify.showErrorNotify('Сервер ответил ошибкой')
           console.log(e.response.data.message)
         }
       }

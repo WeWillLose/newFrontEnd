@@ -40,7 +40,7 @@ export class UserUtils implements UserUtilsInterface {
     if(!user) return false;
     return true;
   }
-  getFio(user: UserInterface | null):string {
+  public getFio(user: UserInterface | null):string {
     if(!user) return '';
     let res = ''
     res+=_.capitalize(user.lastName ||'')+' '

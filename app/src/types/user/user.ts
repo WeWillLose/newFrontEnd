@@ -3,11 +3,13 @@ import {ERole} from 'src/types/user/ERole';
 export interface RoleInterface {
   name: ERole
 }
-export interface UserLoginInterface{
+
+export interface UserLoginInterface {
   username: string | null;
   password: string | null;
 
 }
+
 export class UserLogin implements UserLoginInterface {
   password: string | null;
   username: string | null;
@@ -17,16 +19,34 @@ export class UserLogin implements UserLoginInterface {
     this.username = username || null;
   }
 }
+
 export interface UserInterface {
-  id: number | null,
-  username: string | null,
-  firstName: string | null,
-  lastName: string | null,
-  middleName: string | null,
-  roles?: RoleInterface[]
+  id?: number | null,
+  username?: string | null,
+  firstName?: string | null,
+  lastName?: string | null,
+  middleName?: string | null,
+  roles?: RoleInterface[] | null,
+  chairman?: UserInterface | null
+  password?: string | null;
 }
 
 export class User implements UserInterface {
+  get password(): string | null {
+    return this._password;
+  }
+
+  set password(value: string | null) {
+    this._password = value;
+  }
+  get chairman(): User | null {
+    return this._chairman;
+  }
+
+  set chairman(value: User | null) {
+    this._chairman = value;
+  }
+
   get firstName(): string | null {
     return this._firstName;
   }
@@ -66,6 +86,7 @@ export class User implements UserInterface {
   set roles(value: RoleInterface[]) {
     this._roles = value;
   }
+
   private _id: number | null;
 
   get username(): string | null {
@@ -81,16 +102,20 @@ export class User implements UserInterface {
   private _lastName: string | null;
   private _middleName: string | null;
   private _roles: RoleInterface[];
+  private _chairman: User | null;
+  private _password: string | null;
 
-
-  constructor(id?: number | null, username?:string|null,firstName?: string | null,
-              lastName?: string | null, middleName?: string | null, roles?: RoleInterface[]) {
+  constructor(id?: number | null, username?: string | null, password?: string|null, firstName?: string | null,
+              lastName?: string | null, middleName?: string | null, roles?: RoleInterface[], chairman?: User | null) {
     this._id = id ? id : null;
     this._firstName = firstName ? firstName : null;
     this._lastName = lastName ? lastName : null;
     this._middleName = middleName ? middleName : null;
     this._roles = roles ? roles : [];
-    this._username = username?username :null
+    this._username = username ? username : null
+    this._chairman = chairman? chairman : new User()
+    this._password = password? password : null
   }
+
 
 }
