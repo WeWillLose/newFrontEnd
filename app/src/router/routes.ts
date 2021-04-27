@@ -17,6 +17,7 @@ const routes: RouteConfig[] = [
       { path: 'toDo', component: () => import('pages/ToDo.vue') },
       { path: 'myReports', component: () => import('pages/MyReports.vue') },
       { path: 'admin', component: () => import('pages/Admin.vue') },
+      { path: 'followersReports', component: () => import('pages/FollowersReports.vue') },
     ]
   },
 

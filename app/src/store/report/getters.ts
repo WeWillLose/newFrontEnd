@@ -24,6 +24,7 @@ const getters: GetterTree<ReportStateInterface, StateInterface> = {
           meta['quarter'] = state[t]?.quarter
           res['reportName'] = state[t]?.reportName
           meta['middleName'] = state[t]?.middleName
+          meta['id'] = state[t]?.id
           meta['fio'] = userUtils.getFio({
             firstName: state[t]?.firstName as string || '',
             id: 0,

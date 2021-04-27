@@ -85,6 +85,18 @@ class Api implements ApiInterface {
   async  getChairmans():Promise<ServerResponse<UserInterface[]>> {
     return resource.get('/user/chairman/all')
   }
+
+  async getFollowersReports():Promise<ServerResponse<unknown[]>>  {
+    return resource.get('report/followers/current')
+  }
+
+  async getReport(id: number):Promise<ServerResponse<unknown>> {
+    return resource.get(`report/${id}`)
+  }
+
+  updateReport(id:number,data: Record<string, unknown>):Promise<ServerResponse<unknown>>  {
+    return resource.put(`report/${id}`,data)
+  }
 }
 
 const api = new Api();

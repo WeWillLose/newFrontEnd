@@ -497,6 +497,7 @@
   import ManualTable from 'components/report/report_tables/11/ManualTable.vue';
   import ReportSummary from 'components/report/report_tables/meta/ReportSummary.vue';
   import api from 'src/api/restApi';
+  import notify from "src/api/notifyApi";
 
 
   const CommentTableHelper = createNamespacedHelpers('report_tables/comment')
@@ -545,9 +546,10 @@
       const reportData = ReportTableHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const metaData = MetaHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const store=() => context.root.$store;
+      const {id} =  MetaHelper.useState(['id'])
       const tablesStepperState:Record<string,Record<string,boolean>> = ReportTableHelper.useState(['tablesState']).tablesState as unknown as Record<string,Record<string,boolean>>
       console.log(tablesStepperState)
-      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store,complex_table}
+      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store,complex_table,id}
     },
     methods: {
       loader(name:string):unknown{
@@ -583,7 +585,18 @@
       onFinish():void{
         const data = this.prepareData()
         console.log(data)
-        api.saveReport(data).then(t=>console.log(t))
+        if(this.id){
+          api.updateReport(this.id,data).then(t=>{notify.showPositiveNotify(t)
+          this.store().commit('report/setDefault')
+            this.$router.push("/myreports")
+          })
+        }else{
+          api.saveReport(data).then(t=>{notify.showPositiveNotify(t)
+            this.store().commit('report/setDefault')
+            this.$router.push("/myreports")
+          })
+        }
+
         return;
       },
       onNext(): void {

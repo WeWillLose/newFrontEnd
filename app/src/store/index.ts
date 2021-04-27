@@ -9,6 +9,7 @@ import createPersistedState from 'vuex-persistedstate'
 import example from './module-example';
 import header from './header';
 import user from './user';
+import followersReports from './followersreports';
 import {UserStateInterface} from 'src/store/user/state';
 import {ReportStateInterface} from 'src/store/report/state';
 
@@ -37,7 +38,8 @@ export default store(function ({ Vue }) {
       header,
       user,
       report,
-      admin
+      admin,
+      followersReports
     },
     // enable strict mode (adds overhead!)
     // for dev mode only

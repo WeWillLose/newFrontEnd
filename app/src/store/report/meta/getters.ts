@@ -21,6 +21,7 @@ const getters: GetterTree<MetaStateInterface, StateInterface> = {
     dict['sum1'] = state.sum1
     dict['sum2'] = state.sum2
     dict['reportName'] = state.reportName
+    dict['id'] = state.id
     return dict
   },
   getFirstName: state => state.firstName,

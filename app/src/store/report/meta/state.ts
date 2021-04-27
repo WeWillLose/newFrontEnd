@@ -1,4 +1,5 @@
 export interface MetaStateInterface {
+  id?:number| null,
   lastName: string;
   firstName: string;
   middleName: string;
@@ -15,6 +16,7 @@ export interface MetaStateInterface {
 const currYear = new Date().getFullYear();
 
 export const defaultMetaState: MetaStateInterface = {
+  id:null,
   lastName:'',
   firstName:'',
   middleName:'',
@@ -27,11 +29,11 @@ export const defaultMetaState: MetaStateInterface = {
   procent1:0,
   procent2:0,
   reportName:''
-
 }
 
 function state(): MetaStateInterface {
   return {
+    id:null,
     lastName:'',
     firstName:'',
     middleName:'',
