@@ -1,5 +1,6 @@
 import {User, UserInterface, UserLoginInterface} from 'src/types/user/user';
 import axios, {AxiosInstance, AxiosResponse} from 'axios';
+import {EReportStatus} from "src/types/report/EReportStatus";
 
 export interface ServerResponse<T> {
   status: number
@@ -96,6 +97,10 @@ class Api implements ApiInterface {
 
   updateReport(id:number,data: Record<string, unknown>):Promise<ServerResponse<unknown>>  {
     return resource.put(`report/${id}`,data)
+  }
+
+  async updateReportStatus(id:number,status:EReportStatus) {
+    return resource.put(`report/status/${id}`,{"status":status})
   }
 }
 
