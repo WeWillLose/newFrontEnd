@@ -104,7 +104,7 @@
       prefix="8"
       title="Сохранение учебно-материальной базы, поддержание надлежащих санитарно-гигиенических условий s"
     >
-      <class-rooms-table ref="class_rooms_table"/>
+      <class-rooms-table ref="programs_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -117,7 +117,7 @@
         :error="tablesStepperState.programs.error"
         :done="tablesStepperState.programs.done"
       >
-        <programs-table ref="programs_table"/>
+        <programs-table ref="class_rooms_table"/>
         <q-stepper-navigation>
           <q-btn @click="onNext" color="primary" label="Продолжить"/>
           <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -313,7 +313,7 @@
       :error="tablesStepperState.selfeducation.error"
       :done="tablesStepperState.selfeducation.done"
     >
-      <selfeducation-table ref="selfeducation-table"/>
+      <selfeducation-table ref="selfeducation_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -327,7 +327,7 @@
       :error="tablesStepperState.qualification.error"
       :done="tablesStepperState.qualification.done"
     >
-      <qualification-table ref="qualification-table"/>
+      <qualification-table ref="qualification_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -341,7 +341,7 @@
       :error="tablesStepperState.seminars.error"
       :done="tablesStepperState.seminars.done"
     >
-      <seminars-table ref="seminars-table"/>
+      <seminars-table ref="seminars_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -355,7 +355,7 @@
       :error="tablesStepperState.participation.error"
       :done="tablesStepperState.participation.done"
     >
-      <participation-table ref="participation-table"/>
+      <participation-table ref="participation_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -367,7 +367,7 @@
       prefix="27"
       title="Участие преподавателя в профессиональных конкурсах, конференциях, проектах"
     >
-      <contest-table ref="contest-table"/>
+      <contest-table ref="contest_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -381,7 +381,7 @@
       :error="tablesStepperState.technologies.error"
       :done="tablesStepperState.technologies.done"
     >
-      <technologies-table ref="technologies-table"/>
+      <technologies-table ref="technologies_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -395,7 +395,7 @@
       :error="tablesStepperState.experience.error"
       :done="tablesStepperState.experience.done"
     >
-      <experience-table ref="experience-table"/>
+      <experience-table ref="experience_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -409,7 +409,7 @@
       :error="tablesStepperState.interaction.error"
       :done="tablesStepperState.interaction.done"
     >
-      <interaction-table ref="interaction-table"/>
+      <interaction-table ref="interaction_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -423,7 +423,7 @@
     :error="tablesStepperState.subject.error"
     :done="tablesStepperState.subject.done"
     >
-    <subject-table ref="subject-table"/>
+    <subject-table ref="subject_table"/>
     <q-stepper-navigation>
       <q-btn @click="onNext" color="primary" label="Продолжить"/>
       <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -437,7 +437,7 @@
       :error="tablesStepperState.manual.error"
       :done="tablesStepperState.manual.done"
     >
-      <manual-table ref="manual-table"/>
+      <manual-table ref="manual_table"/>
       <q-stepper-navigation>
         <q-btn @click="onNext" color="primary" label="Продолжить"/>
         <q-btn flat color="primary" @click="onBack" label="Назад" class="q-ml-sm"/>
@@ -480,7 +480,7 @@
   import WorkingProgramTable from 'components/report/report_tables/3/WorkingProgramTable.vue';
   import CircleTable from 'components/report/report_tables/4/CircleTable.vue';
   import EventsTable from 'components/report/report_tables/4/EventsTable.vue';
-  import InstitutionsTable from 'components/report/report_tables/5/ActivityTable.vue';
+  import InstitutionsTable from 'components/report/report_tables/4/InstitutionsTable.vue';
   import PlanTable from 'components/report/report_tables/4/PlanTable.vue';
   import ActivityTable from 'components/report/report_tables/5/ActivityTable.vue';
   import CoolhoursTable from 'components/report/report_tables/5/CoolhoursTable.vue';
@@ -543,13 +543,44 @@
       const meta = ref(null)
       const comment_table = ref(null)
       const complex_table = ref(null)
+      const progress_exam_table = ref(null)
+      const progress_table = ref(null)
+      const creation_table = ref(null)
+      const proective_table = ref(null)
+      const working_program_table = ref(null)
+      const class_rooms_table = ref(null)
+      const reconstruction_table = ref(null)
+      const teachingaids_table = ref(null)
+      const education_table = ref(null)
+      const sdo_table = ref(null)
+      const plan_table = ref(null)
+      const circle_table = ref(null)
+      const institutions_table = ref(null)
+      const plan_group_table = ref(null)
+      const coolhours_table = ref(null)
+      const activity_table = ref(null)
+      const obz_table = ref(null)
+      const selfeducation_table  = ref(null)
+      const qualification_table = ref(null)
+      const seminars_table = ref(null)
+      const participation_table = ref(null)
+      const contest_table = ref(null)
+      const technologies_table = ref(null)
+      const experience_table = ref(null)
+      const interaction_table = ref(null)
+      const subject_table = ref(null)
+      const manual_table = ref(null)
+
+
+
+
       const reportData = ReportTableHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const metaData = MetaHelper.useGetters(['getData']).getData as unknown as Record<string, unknown>;
       const store=() => context.root.$store;
       const {id} =  MetaHelper.useState(['id'])
       const tablesStepperState:Record<string,Record<string,boolean>> = ReportTableHelper.useState(['tablesState']).tablesState as unknown as Record<string,Record<string,boolean>>
       console.log(tablesStepperState)
-      return {step,stepper,meta,comment_table,tablesStepperState,lastInd,reportData,metaData,store,complex_table,id}
+      return {step,stepper,meta,comment_table,creation_table,obz_table,technologies_table,interaction_table,subject_table,manual_table,selfeducation_table,qualification_table,seminars_table,participation_table,contest_table,teachingaids_table,experience_table,reconstruction_table,teachingaids_table,education_table,sdo_table,plan_table,circle_table,institutions_table,plan_group_table,coolhours_table,activity_table,progress_table,progress_exam_table,tablesStepperState,lastInd,reportData,metaData,store,complex_table,id,proective_table,working_program_table,class_rooms_table,}
     },
     methods: {
       loader(name:string):unknown{
