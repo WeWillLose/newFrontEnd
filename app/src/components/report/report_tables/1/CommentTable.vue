@@ -11,7 +11,7 @@
                      autogrow></q-input>
           </q-td>
           <q-td key="score" :props="props">
-            <q-input type="number" ref="score" v-model="props.row.score" dense autofocus
+            <q-input min="0" type="number" ref="score" v-model="props.row.score" dense autofocus
                      :rules="[ruleApi.requiredWithZero()]"
             ></q-input>
           </q-td>

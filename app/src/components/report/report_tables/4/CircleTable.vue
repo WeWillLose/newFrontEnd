@@ -18,7 +18,7 @@
                   <q-input  type="text" clearable v-model="getEditedItem.group" label="Предметный кружок (клуб, секция, студия)"></q-input>
                   <q-input  type="number" clearable v-model="getEditedItem.students" label="Количество
                     студентов"></q-input>
-                  <q-input  type="number" clearable v-model="getEditedItem.lessons" label="Количество занятий"></q-input>
+                  <q-input min="0" type="number" clearable v-model="getEditedItem.lessons" label="Количество занятий"></q-input>
                 </div>
               </q-card-section>
 

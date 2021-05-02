@@ -39,7 +39,7 @@
             <q-input type="text" v-model="props.row.date" dense autofocus></q-input>
           </q-td>
           <q-td key="score" :props="props">
-            <q-input type="number" v-model="props.row.score"
+            <q-input min="0" type="number" v-model="props.row.score"
                      :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0,0.5)]" dense autofocus></q-input>
           </q-td>
 

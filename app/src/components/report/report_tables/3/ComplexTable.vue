@@ -43,7 +43,7 @@
             <q-input type="textarea" v-model="props.row.materials" dense autofocus ></q-input>
           </q-td>
           <q-td key="score" :props="props">
-            <q-input type="number" v-model="props.row.score" dense autofocus
+            <q-input min="0" type="number" v-model="props.row.score" dense autofocus
                      :rules="[ruleApi.withoutSpaces(),ruleApi.numberBetweenNotStrictScore(0.5,1)]"   ></q-input>
           </q-td>
           <q-td key="actions" :props="props" auto-width>

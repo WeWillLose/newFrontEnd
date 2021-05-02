@@ -49,7 +49,7 @@
     <q-step
       :name="4"
       prefix="4"
-      title="Камменарии"
+      title="Комменарии"
       :error="tablesStepperState.comment.error"
       :done="tablesStepperState.comment.done"
     >
